@@ -1,0 +1,81 @@
+.hero-title-para-one {
+    font-family: Biotif-Bold;
+    font-size: 15rem;
+    margin-top: -5rem;
+    letter-spacing: -20px;
+}
+
+.hero-title-para-two {
+    font-family: Biotif-Bold;
+    font-size: 10rem;
+    margin-top: -5rem;
+    letter-spacing: -10px;
+}
+
+.hero-title-para-three-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .hero-title-para-three{
+    font-family: Biotif-Bold;
+    font-size: 8rem;
+    letter-spacing: -5px;
+  }
+  
+  
+  .hero-title-para-three-typing {
+    margin-left: 30px;
+    border-right: 3px solid var(--primary-text);
+    padding-right: 5px;
+    width: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 1s steps(11), cursor 0.4s step-end infinite alternate;
+    color: rgb(255, 106, 0);
+    font-size: 8rem;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: bolder;
+    letter-spacing: -10px;
+    animation-delay: 1s;
+  }
+
+.logo {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    filter: opacity(.1);
+    scale: 1;
+    z-index: -1;
+    transform: rotate(0deg) translateX(800px) translateY(-50px);
+    animation: background 1s ease-in-out ;
+    
+}
+
+@keyframes background {
+    0% {
+        transform: rotate(100deg);
+    }
+    100% {
+        transform: rotate(0deg) translateX(800px) translateY(-50px);
+    }
+}
+
+@keyframes cursor {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+        width: 50%;
+    }
+  }
+  
