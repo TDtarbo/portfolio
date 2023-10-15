@@ -7,8 +7,10 @@ const Navigation = (props) => {
 
 
   const handleClick = () => {
-    mouseClick()
-    mouseLeave()
+    setTimeout(()=> {
+      mouseClick()
+      mouseLeave()
+    }, 500)
   }
 
   return (

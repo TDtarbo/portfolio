@@ -1,3 +1,5 @@
+import Transition from "../utils/transitions";
+
 const Blog = () => {
   return (
     <main>
@@ -6,4 +8,5 @@ const Blog = () => {
   )
 }
 
-export default Blog
+const BlogWithTransition = Transition(Blog);
+export default BlogWithTransition;

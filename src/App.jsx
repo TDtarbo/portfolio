@@ -1,13 +1,14 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Header from "./components/Header";
-import Home from "./pages/Home";
-import Blog from "./pages/Blog";
-import About from "./pages/About";
+import logo from './assets/logo-small.svg';
 import "./styles/modules/App.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import AnimatedRoutes from "./utils/AnimatedRoutes";
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
@@ -16,18 +17,26 @@ function App() {
   const [cursorVariant, setCursorVariant] = useState("default");
 
   useEffect(() => {
+    const handleLoad = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000)
+    };
+
     const handleMouseMove = (e) => {
       setMousePosition({
         x: e.clientX,
         y: e.clientY,
-        style: "background-color: orange" 
+        style: "background-color: orange",
       });
     };
 
     window.addEventListener("mousemove", handleMouseMove);
+    window.addEventListener("load", handleLoad);
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("load", handleLoad);
     };
   }, []);
 
@@ -91,23 +100,27 @@ function App() {
 
   return (
     <>
-      <motion.div
-        className="cursor"
-        variants={variants}
-        animate={cursorVariant}
-      />
-      <BrowserRouter>
-        <Header
-          mouseEnter={mouseEnter}
-          mouseLeave={mouseLeave}
-          mouseClick={mouseClick}
-        />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
-        </Routes>
-      </BrowserRouter>
+      {loading ? (
+        <div className="preloader">
+          <img className="preloader-logo" src={logo} />
+        </div>
+      ) : (
+        <>
+          <motion.div
+            className="cursor"
+            variants={variants}
+            animate={cursorVariant}
+          />
+          <BrowserRouter>
+            <Header
+              mouseEnter={mouseEnter}
+              mouseLeave={mouseLeave}
+              mouseClick={mouseClick}
+            />
+            <AnimatedRoutes />
+          </BrowserRouter>
+        </>
+      )}
     </>
   );
 }

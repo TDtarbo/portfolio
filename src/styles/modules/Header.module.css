@@ -17,7 +17,7 @@
   height: 100%;
   background-color: var(--primary-text);
   z-index: -1;
-  transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in;
 }
 
 .header-wrapper.open::after {
@@ -135,7 +135,7 @@
   justify-content: center;
   align-items: center;
   z-index: 9998;
-  transition: 0.3s ease-in-out; /* Added "s" for seconds */
+  transition: 0.3s ease-in; /* Added "s" for seconds */
 }
 
 .overlay a {
