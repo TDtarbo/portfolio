@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 
 const Navigation = (props) => {
 
-  const {mouseClick, mouseEnter} = props
+  const {mouseClick, mouseLeave} = props
+
 
   const handleClick = () => {
-    mouseEnter()
     mouseClick()
+    mouseLeave()
   }
 
   return (

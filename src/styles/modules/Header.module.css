@@ -52,7 +52,7 @@
 }
 
 .logo-open {
-  filter: grayscale(1);
+  filter: invert(1);
 }
 
 .header-title {

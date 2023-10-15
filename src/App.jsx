@@ -1,38 +1,35 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header'
-import Home from './pages/Home'
-import Blog from './pages/Blog'
-import About from './pages/About'
-import './styles/modules/App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Home from "./pages/Home";
+import Blog from "./pages/Blog";
+import About from "./pages/About";
+import "./styles/modules/App.css";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 function App() {
-
-  
   const [mousePosition, setMousePosition] = useState({
     x: 0,
-    y: 0 
-  })
+    y: 0,
+  });
 
-  const [cursorVariant, setCursorVariant] = useState("default")
-  
+  const [cursorVariant, setCursorVariant] = useState("default");
 
   useEffect(() => {
-
     const handleMouseMove = (e) => {
       setMousePosition({
         x: e.clientX,
-        y: e.clientY
-      })
-    }
+        y: e.clientY,
+        style: "background-color: orange" 
+      });
+    };
 
-    window.addEventListener("mousemove", handleMouseMove)
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-    }
-  },[])
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
 
   const variants = {
     default: {
@@ -52,7 +49,6 @@ function App() {
       top: -50,
       left: -50,
       mixBlendMode: "darken",
-      backgroundColor: "orange",
     },
     close: {
       x: mousePosition.x,
@@ -62,9 +58,8 @@ function App() {
       top: -50,
       left: -50,
       mixBlendMode: "lighten",
-      backgroundColor: "orange",
     },
-    
+
     open: {
       x: mousePosition.x,
       y: mousePosition.y,
@@ -73,40 +68,48 @@ function App() {
       top: -20,
       left: -20,
       mixBlendMode: "lighten",
-      backgroundColor: "orange",
-    }
-  }
+    },
+  };
 
   const mouseEnter = () => {
-    cursorVariant == 'default' ? setCursorVariant('menu') : setCursorVariant('close')
-  }
- 
+    cursorVariant == "default"
+      ? setCursorVariant("menu")
+      : setCursorVariant("close");
+  };
+
   const mouseLeave = () => {
-    cursorVariant == 'close' ? setCursorVariant("open") :setCursorVariant('default') 
-    
-  }
- 
+    cursorVariant == "close"
+      ? setCursorVariant("open")
+      : setCursorVariant("default");
+  };
+
   const mouseClick = () => {
-    cursorVariant == 'menu' ? setCursorVariant('close') : setCursorVariant('menu')
-  }
+    cursorVariant == "menu"
+      ? setCursorVariant("close")
+      : setCursorVariant("menu");
+  };
 
   return (
     <>
-     <motion.div 
-      className="cursor"
-      variants={variants}
-      animate= {cursorVariant}
+      <motion.div
+        className="cursor"
+        variants={variants}
+        animate={cursorVariant}
       />
-     <BrowserRouter>
-     <Header mouseEnter={mouseEnter} mouseLeave={mouseLeave} mouseClick={mouseClick}/>
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/blog' element={<Blog />}/>
-      </Routes>
-     </BrowserRouter>
+      <BrowserRouter>
+        <Header
+          mouseEnter={mouseEnter}
+          mouseLeave={mouseLeave}
+          mouseClick={mouseClick}
+        />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blog" element={<Blog />} />
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,7 +1,6 @@
 .hero-title-para-one {
     font-family: Biotif-Bold;
     font-size: 15rem;
-    margin-top: -5rem;
     letter-spacing: -20px;
 }
 
@@ -16,6 +15,7 @@
     display: flex;
     overflow: hidden;
     width: 100%;
+    margin-top: -4rem;
   }
 
   .hero-title-para-three{
@@ -47,7 +47,7 @@
     position: absolute;
     left: 20%;
     top: 20%;
-    filter: opacity(.1);
+    filter: opacity(.05);
     scale: 1;
     z-index: -1;
     transform: rotate(0deg) translateX(800px) translateY(-50px);

@@ -7,8 +7,7 @@ const Home = () => {
 
   return (
     <main>
-     
-      <div className={styles["hero-title-para-one"]}>Hi!</div>
+      <div className={styles["hero-title-para-one"]}>Hello!</div>
       <div className={styles["hero-title-para-two"]}>I am Thilina &</div>
       <div className={styles['hero-title-para-three-container']}>
             <span className={styles['hero-title-para-three']}>I love </span>

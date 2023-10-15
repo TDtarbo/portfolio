@@ -2,22 +2,22 @@
 
 @font-face {
     font-family: 'Biotif-Regular';
-    src: url('../public/Biotif-Regular.ttf');
+    src: url('/Biotif-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Biotif-Bold';
-    src: url('../public/Biotif-Bold.ttf');
+    src: url('/Biotif-Bold.ttf');
 }
 
 @font-face {
     font-family: 'Biotif-ExtraBold';
-    src: url('../public/Biotif-Bold.ttf');
+    src: url('/Biotif-Bold.ttf');
 }
 
 @font-face {
     font-family: 'SourceCodePro-Light';
-    src: url('../public/SourceCodePro-Light.ttf');
+    src: url('/SourceCodePro-Light.ttf');
 }
 
 :root {
@@ -52,6 +52,24 @@ main {
     top: -10px;
     z-index: 10000;
     pointer-events: none;
-    mix-blend-mode: color-dodge;
-    mix-blend-mode: lighten;
+}
+
+.slide-in {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    transform-origin: bottom;
+}
+
+.slide-out {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    transform-origin: top;
 }
