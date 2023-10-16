@@ -1,34 +1,143 @@
-import  { useState } from 'react';
-import styles from '../styles/modules/Header.module.css';
-import logo from '../assets/logo-small.svg';
+import { useState, useEffect, useContext } from "react";
+import styles from "../styles/modules/Header.module.css";
+import logo from "../assets/logo-small.svg";
 import Navigation from "./Navigation";
+import { CursorContext } from "../contexts/CursorContext";
 
-const Header = (props) => {
+const Header = () => {
+  console.log("Header rendered");
+
+  const { cursorVariant, setCursorVariant } = useContext(CursorContext);
+  const [scrollDirection, setScrollDirection] = useState("top");
+
+  useEffect(() => {
+    let lastScroll = 0;
+
+    const scrollActivatedNavigation = () => {
+      let currentScroll = window.pageYOffset;
+
+      console.log(currentScroll);
+      if (currentScroll <= 0) {
+        setScrollDirection("top");
+      } else if (currentScroll > lastScroll) {
+        setScrollDirection("down");
+      } else if (currentScroll < lastScroll) {
+        setScrollDirection("up");
+      }
+
+      lastScroll = currentScroll;
+    };
+
+    window.addEventListener("scroll", scrollActivatedNavigation);
+
+    return () => {
+      window.removeEventListener("scroll", scrollActivatedNavigation);
+    };
+  }, []);
+
+  console.log(scrollDirection);
+
   const [isOpen, setIsOpen] = useState(false);
 
-  const {mouseEnter, mouseLeave, mouseClick} = props
+  const mouseEnter = () => {
+    cursorVariant == "default"
+      ? setCursorVariant("menu")
+      : setCursorVariant("close");
+  };
 
-  const headerTitle = '< DevThilina />';
+  const mouseLeave = () => {
+    cursorVariant == "close"
+      ? setCursorVariant("open")
+      : setCursorVariant("default");
+  };
+
+  const mouseClick = () => {
+    cursorVariant == "menu"
+      ? setCursorVariant("close")
+      : setCursorVariant("menu");
+  };
+
+  const headerTitle = "< DevThilina />";
 
   const handleToggle = () => {
-    mouseClick()
+    mouseClick();
     setIsOpen(!isOpen);
   };
 
   return (
     <>
-      <div className={`${styles.overlay} ${isOpen ? styles["overlay-open"] : ''}`}>
-        <Navigation mouseClick={handleToggle} mouseLeave={mouseLeave}/>
+      <div
+        className={`
+          ${styles.overlay} 
+          ${isOpen ? styles["overlay-open"] : ""}`}
+      >
+        <Navigation mouseClick={handleToggle} mouseLeave={mouseLeave} />
       </div>
-      <header className={`${styles['header-wrapper']} ${isOpen ? styles.open : ''}`}>
-        <div className={`${styles['header-container']} ${isOpen ? styles.open : ''}`}>
-          <div className={styles['logo-container']}>
-            <img className={`${styles.logo} ${isOpen ? styles["logo-open"] : ''}`} src={logo} />
-            <span className={`${styles['header-title']} ${isOpen ? styles["header-title-open"] : ''}` } data-text={headerTitle}>
+
+      <header
+        className={`
+          ${styles["header-wrapper"]} 
+          ${isOpen ? styles.open : ""}
+          ${
+            scrollDirection === "down"
+              ? styles["header-wrapper-scroll-down"]
+              : scrollDirection === "up"
+              ? styles["header-wrapper-scroll-up"]
+              : ""
+          }
+          `}
+      >
+        <div
+          className={`
+            ${styles["header-container"]} 
+            ${isOpen ? styles.open : ""}
+            ${
+              scrollDirection === "up"
+                ? styles["header-container-scroll"] :
+                scrollDirection === "down"
+               ? styles["header-container-scroll"] : ""
+            }
+            `}
+        >
+          <div className={styles["logo-container"]}>
+            <img
+              src={logo}
+              className={`
+                ${styles.logo} 
+                ${isOpen ? styles["logo-open"] : ""}
+                ${
+                  scrollDirection === "top"
+                    ? styles["logo-animation"]
+                    : scrollDirection === "up"
+                    ? styles["header-title-scroll-up"]
+                    : ""
+                }
+                `}
+            />
+
+            <span
+              data-text={headerTitle}
+              className={`
+              ${styles["header-title"]} 
+              ${isOpen ? styles["header-title-open"] : ""}
+              ${
+                scrollDirection === "up" ? styles["header-title-scroll-up"] :
+                scrollDirection === "down"? styles["header-title-scroll-up"] : ""
+              }
+              `}
+            >
               {headerTitle}
             </span>
           </div>
-          <div onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} onClick={handleToggle} className={`${styles['hamburger-toggle']} ${isOpen ? styles["hamburger-toggle-open"] : ''}`}>
+
+          <div
+            onMouseEnter={mouseEnter}
+            onMouseLeave={mouseLeave}
+            onClick={handleToggle}
+            className={`
+            ${styles["hamburger-toggle"]} 
+            ${isOpen ? styles["hamburger-toggle-open"] : ""}`}
+          >
             <span></span>
             <span></span>
             <span></span>

@@ -1,9 +1,11 @@
 import styles from "../styles/modules/Home.module.css";
 import logo from "../assets/logo-small.svg";
-import { motion } from "framer-motion";
 import Transition from "../utils/transitions";
 
 const Home = () => {
+
+  console.log("Home page rendered");
+
   return (
     <main>
       <div className={styles["hero-title-para-one"]}>Hello!</div>

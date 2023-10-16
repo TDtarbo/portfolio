@@ -35,12 +35,11 @@
 }
 
 body {
-    height: 200vh;
 }
 
 main {
     padding: 200px 150px 150px 150px;
-    /* background-color: red; */
+   height: 300vh;
 }
 
 .cursor {
@@ -51,7 +50,7 @@ main {
     position: fixed;
     left: -10px;
     top: -10px;
-    z-index: 10000;
+    z-index: 1000010;
     pointer-events: none;
 }
 
@@ -110,6 +109,8 @@ main {
     width: 80px;
     animation: rotate 1.5s ease-in-out infinite;
 }
+
+
 
 @keyframes rotate {
     0% {
