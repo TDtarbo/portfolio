@@ -1,4 +1,9 @@
+import Transition from "../utils/transitions";
+
 const Blog = () => {
+
+  console.log("Blog page rendered");
+  
   return (
     <main>
       <h1>Blog</h1>
@@ -6,4 +11,5 @@ const Blog = () => {
   )
 }
 
-export default Blog
+const BlogWithTransition = Transition(Blog);
+export default BlogWithTransition;

@@ -1,112 +1,52 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Header from './components/Header'
-import Home from './pages/Home'
-import Blog from './pages/Blog'
-import About from './pages/About'
-import './styles/modules/App.css';
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header";
+import logo from "./assets/logo-small.svg";
+import "./styles/modules/App.css";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import AnimatedRoutes from "./utils/AnimatedRoutes";
+import CursorContextProvider from "./contexts/CursorContext";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
-
   
-  const [mousePosition, setMousePosition] = useState({
-    x: 0,
-    y: 0 
-  })
+  const [loading, setLoading] = useState(true);
 
-  const [cursorVariant, setCursorVariant] = useState("default")
-  
 
   useEffect(() => {
+    const handleLoad = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000);
+    };
 
-    const handleMouseMove = (e) => {
-      setMousePosition({
-        x: e.clientX,
-        y: e.clientY
-      })
-    }
-
-    window.addEventListener("mousemove", handleMouseMove)
+    window.addEventListener("load", handleLoad);
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove)
-    }
-  },[])
+      window.removeEventListener("load", handleLoad);
+    };
+  }, []);
 
-  const variants = {
-    default: {
-      x: mousePosition.x,
-      y: mousePosition.y,
-      height: 40,
-      width: 40,
-      top: -20,
-      left: -20,
-      mixBlendMode: "color-dodge",
-    },
-    menu: {
-      x: mousePosition.x,
-      y: mousePosition.y,
-      height: 100,
-      width: 100,
-      top: -50,
-      left: -50,
-      mixBlendMode: "darken",
-      backgroundColor: "orange",
-    },
-    close: {
-      x: mousePosition.x,
-      y: mousePosition.y,
-      height: 100,
-      width: 100,
-      top: -50,
-      left: -50,
-      mixBlendMode: "lighten",
-      backgroundColor: "orange",
-    },
-    
-    open: {
-      x: mousePosition.x,
-      y: mousePosition.y,
-      height: 40,
-      width: 40,
-      top: -20,
-      left: -20,
-      mixBlendMode: "lighten",
-      backgroundColor: "orange",
-    }
-  }
 
-  const mouseEnter = () => {
-    cursorVariant == 'default' ? setCursorVariant('menu') : setCursorVariant('close')
-  }
- 
-  const mouseLeave = () => {
-    cursorVariant == 'close' ? setCursorVariant("open") :setCursorVariant('default') 
-    
-  }
- 
-  const mouseClick = () => {
-    cursorVariant == 'menu' ? setCursorVariant('close') : setCursorVariant('menu')
-  }
 
   return (
     <>
-     <motion.div 
-      className="cursor"
-      variants={variants}
-      animate= {cursorVariant}
-      />
-     <BrowserRouter>
-     <Header mouseEnter={mouseEnter} mouseLeave={mouseLeave} mouseClick={mouseClick}/>
-      <Routes>
-        <Route path='/' element={<Home />}/>
-        <Route path='/about' element={<About />}/>
-        <Route path='/blog' element={<Blog />}/>
-      </Routes>
-     </BrowserRouter>
+      {loading ? (
+        <div className="preloader">
+          <img className="preloader-logo" src={logo} />
+        </div>
+      ) : (
+        <>
+          <BrowserRouter>
+            <CursorContextProvider>
+              <CustomCursor/>
+              <Header/>
+            </CursorContextProvider>
+            <AnimatedRoutes />
+          </BrowserRouter>
+        </>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;
