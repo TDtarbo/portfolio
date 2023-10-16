@@ -2,6 +2,7 @@
     font-family: Biotif-Bold;
     font-size: 15rem;
     letter-spacing: -20px;
+    margin-top: -2rem;
 }
 
 .hero-title-para-two {
@@ -38,7 +39,7 @@
     font-family: 'Source Code Pro', monospace;
     font-weight: bolder;
     letter-spacing: -10px;
-    animation-delay: 1s;
+    animation-delay: .45s;
   }
 
 .logo {
@@ -53,6 +54,10 @@
     transform: rotate(0deg) translateX(800px) scaleY(1.5);
     animation: background 2s ease-in-out ;
     
+}
+
+.shrink {
+  transform: translate3d(-35% , 0, 0);
 }
 
 @keyframes background {

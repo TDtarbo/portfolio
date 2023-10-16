@@ -3,11 +3,13 @@ import styles from "../styles/modules/Header.module.css";
 import logo from "../assets/logo-small.svg";
 import Navigation from "./Navigation";
 import { CursorContext } from "../contexts/CursorContext";
+import { MenuBtnContext } from "../contexts/MenuBtnContext";
 
 const Header = () => {
   console.log("Header rendered");
 
   const { cursorVariant, setCursorVariant } = useContext(CursorContext);
+  const { isOpen, setIsOpen } = useContext(MenuBtnContext);
   const [scrollDirection, setScrollDirection] = useState("top");
 
   useEffect(() => {
@@ -16,7 +18,6 @@ const Header = () => {
     const scrollActivatedNavigation = () => {
       let currentScroll = window.pageYOffset;
 
-      console.log(currentScroll);
       if (currentScroll <= 0) {
         setScrollDirection("top");
       } else if (currentScroll > lastScroll) {
@@ -35,9 +36,6 @@ const Header = () => {
     };
   }, []);
 
-  console.log(scrollDirection);
-
-  const [isOpen, setIsOpen] = useState(false);
 
   const mouseEnter = () => {
     cursorVariant == "default"

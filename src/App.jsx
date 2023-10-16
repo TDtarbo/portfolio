@@ -5,18 +5,17 @@ import "./styles/modules/App.css";
 import { useEffect, useState } from "react";
 import AnimatedRoutes from "./utils/AnimatedRoutes";
 import CursorContextProvider from "./contexts/CursorContext";
+import MenuBtnContextProvider from "./contexts/MenuBtnContext";
 import CustomCursor from "./components/CustomCursor";
 
 function App() {
-  
   const [loading, setLoading] = useState(true);
-
 
   useEffect(() => {
     const handleLoad = () => {
       setTimeout(() => {
         setLoading(false);
-      }, 1000);
+      }, 2000);
     };
 
     window.addEventListener("load", handleLoad);
@@ -25,8 +24,6 @@ function App() {
       window.removeEventListener("load", handleLoad);
     };
   }, []);
-
-
 
   return (
     <>
@@ -37,11 +34,13 @@ function App() {
       ) : (
         <>
           <BrowserRouter>
-            <CursorContextProvider>
-              <CustomCursor/>
-              <Header/>
-            </CursorContextProvider>
-            <AnimatedRoutes />
+            <MenuBtnContextProvider>
+              <CursorContextProvider>
+                <CustomCursor />
+                <Header />
+              </CursorContextProvider>
+              <AnimatedRoutes />
+            </MenuBtnContextProvider>
           </BrowserRouter>
         </>
       )}
