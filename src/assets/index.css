@@ -111,6 +111,10 @@ main {
     animation: rotate 1.5s ease-in-out infinite;
 }
 
+.sq4 {
+    stroke: red;
+}
+
 
 
 @keyframes rotate {

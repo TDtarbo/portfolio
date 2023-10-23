@@ -78,10 +78,7 @@ const Header = () => {
           ${isOpen ? styles.open : ""}
           ${
             scrollDirection === "down"
-              ? styles["header-wrapper-scroll-down"]
-              : scrollDirection === "up"
-              ? styles["header-wrapper-scroll-up"]
-              : ""
+              ? styles["header-wrapper-scroll-down"] : ""
           }
           `}
       >

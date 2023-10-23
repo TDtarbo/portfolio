@@ -7,16 +7,24 @@ import AnimatedRoutes from "./utils/AnimatedRoutes";
 import CursorContextProvider from "./contexts/CursorContext";
 import MenuBtnContextProvider from "./contexts/MenuBtnContext";
 import CustomCursor from "./components/CustomCursor";
+import { ReactLenis } from '@studio-freight/react-lenis'
+
 
 function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+
+
+
+
     const handleLoad = () => {
       setTimeout(() => {
         setLoading(false);
       }, 2000);
     };
+
+    
 
     window.addEventListener("load", handleLoad);
 
@@ -27,12 +35,15 @@ function App() {
 
   return (
     <>
+    <ReactLenis root>
+          
       {loading ? (
         <div className="preloader">
           <img className="preloader-logo" src={logo} />
         </div>
       ) : (
         <>
+
           <BrowserRouter>
             <MenuBtnContextProvider>
               <CursorContextProvider>
@@ -44,6 +55,7 @@ function App() {
           </BrowserRouter>
         </>
       )}
+      </ReactLenis>
     </>
   );
 }

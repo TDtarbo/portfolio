@@ -58,10 +58,10 @@ const CustomCursor = () => {
     open: {
       x: mousePosition.x,
       y: mousePosition.y,
-      height: 40,
-      width: 40,
-      top: -20,
-      left: -20,
+      height: 20,
+      width: 20,
+      top: -10,
+      left: -10,
       mixBlendMode: "lighten",
     }
   };
