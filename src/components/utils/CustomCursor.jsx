@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {CursorContext} from "../contexts/CursorContext";
+import {CursorContext} from "../../contexts/CursorContext";
 
 const CustomCursor = () => {
 

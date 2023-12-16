@@ -35,11 +35,12 @@
 }
 
 body {
+    color: #222222;
+    overflow-x: hidden;
 }
 
 main {
     padding: 200px 150px 150px 150px;
-   height: 300vh;
    transition: .3s ease-in-out;
 }
 

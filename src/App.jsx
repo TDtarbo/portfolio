@@ -1,12 +1,12 @@
 import { BrowserRouter } from "react-router-dom";
-import Header from "./components/Header";
+import Header from "./components/utils/Header";
 import logo from "./assets/logo-small.svg";
 import "./styles/modules/App.css";
 import { useEffect, useState } from "react";
-import AnimatedRoutes from "./utils/AnimatedRoutes";
+import AnimatedRoutes from "./components/utils/AnimatedRoutes";
 import CursorContextProvider from "./contexts/CursorContext";
 import MenuBtnContextProvider from "./contexts/MenuBtnContext";
-import CustomCursor from "./components/CustomCursor";
+import CustomCursor from "./components/utils/CustomCursor";
 import { ReactLenis } from '@studio-freight/react-lenis'
 
 

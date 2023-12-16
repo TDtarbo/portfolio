@@ -1,10 +1,11 @@
 import { useContext, useEffect } from "react";
-import styles from "../styles/modules/Home.module.css";
+import styles from "../components/home/Home.module.css";
 import logo from "../assets/logo-background.svg";
-import Transition from "../utils/transitions";
+import Transition from "../components/utils/Transitions";
 import { MenuBtnContext } from "../contexts/MenuBtnContext";
-import  HeroSection  from "../components/HeroSection";
-import IntroSection from "../components/IntroSection";
+import  HeroSection  from "../components/home/hero/HeroSection";
+import IntroSection from "../components/home/intro/IntroSection";
+import WorkSection from "../components/home/work/WorkSection";
 
 const Home = () => {
   
@@ -23,6 +24,8 @@ const Home = () => {
 
       <HeroSection/>
       <IntroSection/>
+      <WorkSection/>
+      {/* <img className={styles.logo} src={logo} /> */}
       
     </main>
   );

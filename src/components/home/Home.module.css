@@ -1,3 +1,7 @@
+.hero-section {
+  
+}
+
 .hero-title-para-one {
     font-family: Biotif-Bold;
     font-size: 20rem;
@@ -14,7 +18,7 @@
 
 .hero-title-para-two {
     font-family: Biotif-Bold;
-    font-size: 12rem;
+    font-size: 9rem;
     margin-top: -8rem;
     letter-spacing: -10px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
@@ -65,12 +69,6 @@
     
 }
 
-.hero-paragraph {
-  font-size: 2.25rem;
-  margin-top: 15rem;
-  width: 50%;
-  list-style: none;
-}
 
 .shrink {
   transition-delay: .1s;

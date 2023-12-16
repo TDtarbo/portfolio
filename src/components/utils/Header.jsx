@@ -1,9 +1,9 @@
 import { useState, useEffect, useContext } from "react";
-import styles from "../styles/modules/Header.module.css";
-import logo from "../assets/logo-small.svg";
+import styles from "../../styles/modules/Header.module.css";
+import logo from "../../assets/logo-small.svg";
 import Navigation from "./Navigation";
-import { CursorContext } from "../contexts/CursorContext";
-import { MenuBtnContext } from "../contexts/MenuBtnContext";
+import { CursorContext } from "../../contexts/CursorContext";
+import { MenuBtnContext } from "../../contexts/MenuBtnContext";
 
 const Header = () => {
   console.log("Header rendered");

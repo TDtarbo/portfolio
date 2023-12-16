@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import Home from "../pages/Home";
-import Blog from "../pages/Blog";
-import About from "../pages/About";
+import Home from "../../pages/Home";
+import Blog from "../../pages/Blog";
+import About from "../../pages/About";
 import { AnimatePresence } from "framer-motion";
 
 const AnimatedRoutes = () => {

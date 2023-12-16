@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logo from '../assets/logo-small.svg';
+import logo from '../../assets/logo-small.svg';
 
 const Transition = (OgComponent) => {
     const TransitionComponent = () => (

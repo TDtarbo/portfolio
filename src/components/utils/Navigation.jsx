@@ -1,4 +1,4 @@
-import styles from "../styles/modules/Navigation.module.css";
+import styles from "../../styles/modules/Navigation.module.css";
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
