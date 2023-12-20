@@ -6,6 +6,7 @@ import { MenuBtnContext } from "../contexts/MenuBtnContext";
 import  HeroSection  from "../components/home/hero/HeroSection";
 import IntroSection from "../components/home/intro/IntroSection";
 import WorkSection from "../components/home/work/WorkSection";
+import SkillsSection from "../components/home/skills/SkillsSection";
 
 const Home = () => {
   
@@ -25,6 +26,7 @@ const Home = () => {
       <HeroSection/>
       <IntroSection/>
       <WorkSection/>
+      <SkillsSection/>
       {/* <img className={styles.logo} src={logo} /> */}
       
     </main>

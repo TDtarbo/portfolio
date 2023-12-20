@@ -4,20 +4,17 @@
 }
 
 .title {
-  position: absolute;
+  position: relative;
   font-family: "Biotif-Regular";
   font-size: 22rem;
-  z-index: 1;
-  margin-top: -300px;
   white-space: nowrap;
   font-weight: 600;
   color: rgb(236, 234, 232);
   z-index: -1;
-  transition: all 2s cubic-bezier(0.1, 2, 0.44, 0.2);
 }
 
 .parent {
-  margin-block: 330px 50px;
+  margin-block: -200px 50px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(6, 1fr);

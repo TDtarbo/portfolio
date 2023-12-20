@@ -1,0 +1,32 @@
+.card-container-section {
+    position: relative;
+    height: 300vh;
+}
+
+.card-container-outer {
+    position: sticky;
+    top: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.title {
+    font-family: "Biotif-Regular";
+    font-size: 22rem;
+    white-space: nowrap;
+    letter-spacing: -10px;
+    font-weight: 600;
+    color: rgb(56, 56, 56);
+    z-index: 0;
+    margin-top: 80px;
+}
+
+
+.card-container-inner {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}

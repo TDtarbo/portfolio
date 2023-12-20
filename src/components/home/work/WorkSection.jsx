@@ -11,10 +11,10 @@ const WorkSection = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end end"]
+    offset: ["start end", "end start"]
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], [200, -400]);
+  const x = useTransform(scrollYProgress, [0, 1], [400, -2000]);
 
   return (
     <div className={styles["container"]} ref={ref}>
