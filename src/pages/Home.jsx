@@ -1,22 +1,34 @@
-import styles from "../styles/modules/Home.module.css";
-import logo from "../assets/logo-small.svg";
-import Transition from "../utils/transitions";
+import { useContext, useEffect } from "react";
+import styles from "../components/home/Home.module.css";
+import logo from "../assets/logo-background.svg";
+import Transition from "../components/utils/Transitions";
+import { MenuBtnContext } from "../contexts/MenuBtnContext";
+import  HeroSection  from "../components/home/hero/HeroSection";
+import IntroSection from "../components/home/intro/IntroSection";
+import WorkSection from "../components/home/work/WorkSection";
+import SkillsSection from "../components/home/skills/SkillsSection";
 
 const Home = () => {
-
+  
+  const { isOpen } = useContext(MenuBtnContext);
+  
   console.log("Home page rendered");
 
+  useEffect(() => {
+
+    window.scrollTo(0, 0);
+
+  }, []);
+
   return (
-    <main>
-      <div className={styles["hero-title-para-one"]}>Hello!</div>
-      <div className={styles["hero-title-para-two"]}>I am Thilina &</div>
-      <div className={styles["hero-title-para-three-container"]}>
-        <span className={styles["hero-title-para-three"]}>I love </span>
-        <span className={styles["hero-title-para-three-typing"]}>
-          &lt;Coding/&gt;
-        </span>
-      </div>
-      <img className={styles.logo} src={logo} />
+    <main  className={isOpen? styles["shrink"] : ""}>
+
+      <HeroSection/>
+      <IntroSection/>
+      <WorkSection/>
+      <SkillsSection/>
+      {/* <img className={styles.logo} src={logo} /> */}
+      
     </main>
   );
 };

@@ -1,26 +1,40 @@
+.hero-section {
+  
+}
+
 .hero-title-para-one {
     font-family: Biotif-Bold;
-    font-size: 15rem;
+    font-size: 20rem;
     letter-spacing: -20px;
+    margin-top: -1rem;
+    margin-left: -4rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+}
+
+.hero-title-para-two-container {
+    margin-left: -2.5rem;
+    display: flex;
 }
 
 .hero-title-para-two {
     font-family: Biotif-Bold;
-    font-size: 10rem;
-    margin-top: -5rem;
+    font-size: 9rem;
+    margin-top: -8rem;
     letter-spacing: -10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
 }
 
 .hero-title-para-three-container {
     display: flex;
     overflow: hidden;
     width: 100%;
-    margin-top: -4rem;
+    margin-top: -3rem;
+    margin-left: -2.5rem;
   }
 
   .hero-title-para-three{
     font-family: Biotif-Bold;
-    font-size: 8rem;
+    font-size: 7rem;
     letter-spacing: -5px;
   }
   
@@ -38,22 +52,29 @@
     font-family: 'Source Code Pro', monospace;
     font-weight: bolder;
     letter-spacing: -10px;
-    animation-delay: 1s;
+    animation-delay: .45s;
   }
 
 .logo {
-    width: 500px;
-    height: 500px;
+    width: 200px;
+    height: 200px;
     position: absolute;
-    left: 20%;
-    top: 20%;
-    filter: opacity(.05);
+    left: 35%;
+    top: 600px;
+    filter: opacity(.1);
     scale: 1;
     z-index: -1;
     transform: rotate(0deg) translateX(800px) scaleY(1.5);
     animation: background 2s ease-in-out ;
     
 }
+
+
+.shrink {
+  transition-delay: .1s;
+  transform: translate3d(-35% , 0, 0);
+}
+
 
 @keyframes background {
     0% {

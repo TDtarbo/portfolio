@@ -1,9 +1,9 @@
-import styles from "../styles/modules/Navigation.module.css";
+import styles from "../../styles/modules/Navigation.module.css";
 import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const Navigation = (props) => {
+const Navigation = ({mouseClick, mouseLeave}) => {
 
-  const {mouseClick, mouseLeave} = props
 
 
   const handleClick = () => {
@@ -23,5 +23,10 @@ const Navigation = (props) => {
     </nav>
   );
 };
+
+Navigation.propTypes = {
+  mouseClick: PropTypes.func.isRequired,
+  mouseLeave: PropTypes.func.isRequired
+}
 
 export default Navigation;

@@ -1,4 +1,5 @@
 import {createContext, useState} from 'react'
+import PropTypes from 'prop-types';
 
 
 export const CursorContext = createContext(null)
@@ -13,5 +14,9 @@ export default function CursorContextProvider({
         {children}
     </CursorContext.Provider>
   )
+}
+
+CursorContextProvider.propTypes = {
+  children: PropTypes.node.isRequired
 }
 
