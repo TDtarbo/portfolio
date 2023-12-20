@@ -4,19 +4,24 @@ import proj01 from "../../../assets/proj01.png";
 import proj02 from "../../../assets/proj02.png";
 import proj03 from "../../../assets/proj03.png";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const WorkSection = () => {
-  const { scrollYProgress } = useScroll();
-  const x = useTransform(scrollYProgress, [0, 1], [3000, -2500]);
+
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end end"]
+  });
+
+  const x = useTransform(scrollYProgress, [0, 1], [200, -400]);
 
   return (
-    <div className={styles["container"]}>
+    <div className={styles["container"]} ref={ref}>
       <motion.h1
         className={styles["title"]}
         style={{ x: x }}
-        viewport={{
-          once: false,
-        }}
+        transition={{ ease: "linear", duration: 0.01, stiffness: 0, damping: 0 }}
       >
         My work
       </motion.h1>
