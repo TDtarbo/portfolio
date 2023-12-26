@@ -68,7 +68,7 @@ const cards = [
       y: 0,
       transition: {
         type: "spring",
-        duration: 3,
+        duration: 2,
         delay: 0.3,
       },
     }),
@@ -96,6 +96,17 @@ const HorizontalScrollCarousel = () => {
         >
           Skills
         </motion.h2>
+        <motion.p
+          className={styles["paragraph"]}
+          variants={fadeInBottom}
+          initial="initial"
+          whileInView="animate"
+          viewport={{
+            once: true,
+          }}
+        >
+          The Palette of Possibilities
+        </motion.p>
           <motion.div style={{ x }} className={styles["card-container-inner"]}>
             {cards.map((card) => {
               return <SkillCard card={card} key={card.id} />;
