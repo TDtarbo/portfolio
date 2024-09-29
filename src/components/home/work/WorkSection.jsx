@@ -5,6 +5,7 @@ import proj02 from "../../../assets/proj02.png";
 import proj03 from "../../../assets/proj03.png";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const WorkSection = () => {
 
@@ -66,7 +67,7 @@ const WorkSection = () => {
       </div>
       <div className={styles["section-footer"]}>
         <div className={styles["line"]}></div>
-        <a className={styles["see-all-btn"]} href="#">See all work</a>
+        <Link to="/mywork" className={styles["see-all-btn"]}>See all work</Link>
       </div>
     </div>
   );
