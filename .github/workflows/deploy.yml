@@ -21,11 +21,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-<<<<<<< HEAD
-      - name: Setup Node.js
-=======
       - name: Setup Node
->>>>>>> 63ed49b (Configure GitHub Pages deployment)
         uses: actions/setup-node@v4
         with:
           node-version: 20
@@ -37,23 +33,17 @@ jobs:
       - name: Build
         run: npm run build
 
-<<<<<<< HEAD
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
+      # GitHub Pages serves unknown client-side routes through this file.
+      - name: Support client-side routes
+        run: cp dist/index.html dist/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
-=======
-      - name: Support client-side routes
-        run: cp dist/index.html dist/404.html
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
           path: dist
->>>>>>> 63ed49b (Configure GitHub Pages deployment)
 
   deploy:
     environment:
