@@ -1,4 +1,4 @@
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import Header from "./components/utils/Header";
 import logo from "./assets/logo-small.svg";
 import "./styles/modules/App.css";
@@ -49,11 +49,7 @@ function App() {
       ) : (
         <>
 
-<<<<<<< HEAD
-          <HashRouter>
-=======
           <BrowserRouter basename={routerBasename}>
->>>>>>> 63ed49b (Configure GitHub Pages deployment)
             <MenuBtnContextProvider>
               <CursorContextProvider>
                 <CustomCursor />
@@ -61,7 +57,7 @@ function App() {
               </CursorContextProvider>
               <AnimatedRoutes />
             </MenuBtnContextProvider>
-          </HashRouter>
+          </BrowserRouter>
         </>
       )}
       </ReactLenis>
