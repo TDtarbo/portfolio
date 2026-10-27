@@ -6,7 +6,7 @@ const SkillsSection = () => {
   return (
     <div className={styles["outer-container"]}>
       <div className={styles["inner-container"]}>
-        <HorizontalScrollCarousel/>
+        <HorizontalScrollCarousel />
       </div>
     </div>
   );

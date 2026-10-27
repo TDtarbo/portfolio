@@ -11,6 +11,9 @@ import { ReactLenis } from '@studio-freight/react-lenis'
 
 
 function App() {
+  const routerBasename = import.meta.env.BASE_URL === "/"
+    ? undefined
+    : import.meta.env.BASE_URL.replace(/\/$/, "");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -46,7 +49,11 @@ function App() {
       ) : (
         <>
 
+<<<<<<< HEAD
           <HashRouter>
+=======
+          <BrowserRouter basename={routerBasename}>
+>>>>>>> 63ed49b (Configure GitHub Pages deployment)
             <MenuBtnContextProvider>
               <CursorContextProvider>
                 <CustomCursor />

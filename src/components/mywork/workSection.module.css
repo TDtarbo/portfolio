@@ -57,6 +57,7 @@
 }
 
 .overlay-text {
+  text-decoration: none;
   opacity: 0;
   display: flex;
   justify-content: center;

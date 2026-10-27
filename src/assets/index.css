@@ -2,22 +2,27 @@
 
 @font-face {
     font-family: 'Biotif-Regular';
-    src: url('/Biotif-Regular.ttf');
+    src: url('/portfolio/Biotif-Regular.ttf');
 }
 
 @font-face {
     font-family: 'Biotif-Bold';
-    src: url('/Biotif-Bold.ttf');
+    src: url('/portfolio/Biotif-Bold.ttf');
 }
 
 @font-face {
     font-family: 'Biotif-ExtraBold';
-    src: url('/Biotif-Bold.ttf');
+    src: url('/portfolio/Biotif-Bold.ttf');
 }
 
 @font-face {
     font-family: 'SourceCodePro-Light';
-    src: url('/SourceCodePro-Light.ttf');
+    src: url('/portfolio/SourceCodePro-Light.ttf');
+}
+
+@font-face {
+    font-family: 'SourceCodePro-Light';
+    src: url('/portfolio/SourceCodePro-Light.ttf');
 }
 
 :root {

@@ -30,7 +30,7 @@ const WorkSection = () => {
           <div className={styles["project"]}>
             <div className={styles["image-container"]}>
               <img src={proj04} className={styles["project-image"]} />
-              <div className={styles["overlay-text"]}>View</div>
+              <Link to="/mywork/Getaway-Driver" className={styles["overlay-text"]}>View</Link>
             </div>
             <p className={styles["project-title"]}>
               Getaway Driver - Police Chase Game

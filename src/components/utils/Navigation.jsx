@@ -78,6 +78,11 @@ const Navigation = ({ mouseClick, mouseLeave }) => {
           Blog
         </Link>
       </motion.li>
+      <motion.li variants={variants}>
+        <Link onClick={handleClick} to="/mywork">
+          My Work
+        </Link>
+      </motion.li>
     </motion.ul>
       </div>
     </nav>
