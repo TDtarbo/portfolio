@@ -1,6 +1,6 @@
 import HorizontalScrollCarousel from "./HorizontalScrollContainer";
 
-import styles from "./skillSection.module.css";
+import styles from "./skillsection.module.css";
 
 const SkillsSection = () => {
   return (
