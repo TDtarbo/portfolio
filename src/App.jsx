@@ -1,4 +1,4 @@
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Header from "./components/utils/Header";
 import logo from "./assets/logo-small.svg";
 import "./styles/modules/App.css";
@@ -46,7 +46,7 @@ function App() {
       ) : (
         <>
 
-          <BrowserRouter>
+          <HashRouter>
             <MenuBtnContextProvider>
               <CursorContextProvider>
                 <CustomCursor />
@@ -54,7 +54,7 @@ function App() {
               </CursorContextProvider>
               <AnimatedRoutes />
             </MenuBtnContextProvider>
-          </BrowserRouter>
+          </HashRouter>
         </>
       )}
       </ReactLenis>
