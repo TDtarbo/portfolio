@@ -4,18 +4,34 @@ import proj01 from "../../../assets/proj01.png";
 import proj02 from "../../../assets/proj02.png";
 import proj04 from "../../../assets/proj04.png";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const WorkSection = () => {
 
   const ref = useRef(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 1000px)");
+    const updateLayout = () => setIsMobile(mediaQuery.matches);
+
+    updateLayout();
+    mediaQuery.addEventListener("change", updateLayout);
+
+    return () => mediaQuery.removeEventListener("change", updateLayout);
+  }, []);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"]
   });
 
-  const x = useTransform(scrollYProgress, [0, 1], [400, -2000]);
+  const x = useTransform(
+    scrollYProgress,
+    [0, 1],
+    isMobile ? [150, -500] : [900, -2000]
+  );
 
   return (
     <div className={styles["container"]} ref={ref}>
@@ -36,6 +52,7 @@ const WorkSection = () => {
             <p className={styles["project-title"]}>
               Getaway Driver - Police Chase Game
             </p>
+            <p className={styles["project-meta"]}>Game development · Interactive experience</p>
           </div>
         </div>
         <div className={styles["div2"]}><div className={styles["project"]}>
@@ -47,6 +64,7 @@ const WorkSection = () => {
               <p className={styles["project-title"]}>
                 VidCatch - Youtube video downloader
               </p>
+              <p className={styles["project-meta"]}>Web application · JavaScript</p>
           </div> 
           </div>
         <div className={styles["div3"]}>
@@ -65,6 +83,7 @@ const WorkSection = () => {
             <p className={styles["project-title"]}>
               LearnUP - The Study Planner App
             </p>
+            <p className={styles["project-meta"]}>Product design · Android application</p>
           </div>  
         </div>
       </div>

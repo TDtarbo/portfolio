@@ -6,7 +6,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import SphereShape from "../utils/Sphere";
 
-const Navigation = ({ mouseClick, mouseLeave }) => {
+const Navigation = ({ mouseClick, mouseLeave, isOpen }) => {
   const handleClick = () => {
     setTimeout(() => {
       mouseClick();
@@ -44,13 +44,12 @@ const Navigation = ({ mouseClick, mouseLeave }) => {
         className={styles["canvas-container"]}
         variants={fadeInRight}
         initial="initial"
-        whileInView="animate"
-        viewport={{
-          once: false,
-        }}
+        animate={isOpen ? "animate" : "initial"}
       >
         <Canvas
           className="canvas"
+          dpr={[1, 1.5]}
+          style={{ width: "100%", height: "100%", display: "block" }}
           camera={{
             position: [0, 0, -10],
           }}
@@ -74,11 +73,6 @@ const Navigation = ({ mouseClick, mouseLeave }) => {
         </Link>
       </motion.li>
       <motion.li variants={variants}>
-        <Link onClick={handleClick} to="/blog">
-          Blog
-        </Link>
-      </motion.li>
-      <motion.li variants={variants}>
         <Link onClick={handleClick} to="/mywork">
           My Work
         </Link>
@@ -92,6 +86,7 @@ const Navigation = ({ mouseClick, mouseLeave }) => {
 Navigation.propTypes = {
   mouseClick: PropTypes.func.isRequired,
   mouseLeave: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
 };
 
 export default Navigation;

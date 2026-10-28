@@ -1,8 +1,28 @@
 import { motion } from "framer-motion";
+import { Canvas, useThree } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei";
 import styles from "..//Home.module.css";
+import SphereShape from "../../utils/Sphere";
 
 const text = "Digital Marvels.";
 const letters = Array.from(text);
+
+const ResponsiveOrbitControls = () => {
+  const { size } = useThree();
+  const isTouchLayout = size.width <= 900;
+
+  if (isTouchLayout) {
+    return null;
+  }
+
+  return (
+    <OrbitControls
+      enableZoom={false}
+      enablePan
+      enableRotate
+    />
+  );
+};
 
 const HeroAnimation = () => {
   const container = {
@@ -52,6 +72,7 @@ const HeroAnimation = () => {
   return (
     <>
     <div className={styles["hero-section"]}>
+      <div className={styles["hero-content"]}>
 
       <motion.div
         variants={mainAnimation}
@@ -88,6 +109,18 @@ const HeroAnimation = () => {
           );
         })}
       </motion.div>
+      <p className={styles["hero-role"]}>
+        Software engineering undergraduate · Full-stack developer
+      </p>
+      </div>
+      <div className={styles["hero-canvas-container"]}>
+        <Canvas camera={{ position: [0, 0, -10] }}>
+          <ResponsiveOrbitControls />
+          <directionalLight />
+          <pointLight position={[-30, 0, -30]} power={10.0} />
+          <SphereShape />
+        </Canvas>
+      </div>
         </div>
     </>
   );

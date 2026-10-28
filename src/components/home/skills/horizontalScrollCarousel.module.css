@@ -3,6 +3,10 @@
     height: 300vh;
 }
 
+.mobile-section {
+    display: none;
+}
+
 .card-container-outer {
     position: sticky;
     top: 0;
@@ -41,5 +45,88 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
-    margin-top: 100px;
+    margin-top: 300px;
+}
+
+@media (max-width: 1000px) {
+    .desktop-section {
+        display: none;
+    }
+
+    .mobile-section {
+        display: block;
+        padding: 80px 0 100px;
+    }
+
+    .mobile-title {
+        color: #505050;
+        font-family: "Biotif-Regular";
+        font-size: clamp(5rem, 16vw, 9rem);
+        line-height: 0.85;
+        letter-spacing: -5px;
+    }
+
+    .mobile-paragraph {
+        margin: 25px 0 50px;
+        color: #8a8a8a;
+        font-family: "Biotif-Regular";
+        font-size: 1.4rem;
+    }
+
+    .mobile-card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .mobile-card-grid :global(.card-description) {
+        display: none;
+    }
+
+    .card-container-section {
+        height: 240vh;
+    }
+
+    .card-container-outer {
+        height: 100vh;
+    }
+
+    .title {
+        font-size: 10rem;
+        letter-spacing: -6px;
+        margin-top: 110px;
+    }
+
+    .paragraph {
+        width: 280px;
+        font-size: 2rem;
+        line-height: 1;
+        margin-top: 350px;
+    }
+
+    .card-container-inner {
+        gap: 15px;
+        margin-top: 330px;
+    }
+}
+
+@media (max-width: 500px) {
+    .card-container-section {
+        height: 220vh;
+    }
+
+    .title {
+        font-size: 7rem;
+        letter-spacing: -4px;
+    }
+
+    .paragraph {
+        width: 220px;
+        font-size: 1.6rem;
+        margin-top: 300px;
+    }
+
+    .mobile-card-grid {
+        gap: 8px;
+    }
 }

@@ -69,7 +69,11 @@ const Header = () => {
           ${styles.overlay} 
           ${isOpen ? styles["overlay-open"] : ""}`}
       >
-        <Navigation mouseClick={handleToggle} mouseLeave={mouseLeave} />
+        <Navigation
+          mouseClick={handleToggle}
+          mouseLeave={mouseLeave}
+          isOpen={isOpen}
+        />
       </div>
 
       <header
@@ -103,8 +107,6 @@ const Header = () => {
                 ${
                   scrollDirection === "top"
                     ? styles["logo-animation"]
-                    : scrollDirection === "up"
-                    ? styles["header-title-scroll-up"]
                     : ""
                 }
                 `}

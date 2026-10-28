@@ -1,6 +1,7 @@
 .container {
   margin-block: 50px;
   position: relative;
+  overflow-x: clip;
 }
 
 .title {
@@ -83,6 +84,13 @@
   margin-top: 20px;
 }
 
+.project-meta {
+  color: var(--primary-text-light);
+  font-family: "SourceCodePro-Light", monospace;
+  font-size: 0.8rem;
+  margin-top: 8px;
+}
+
 .div2 {
   grid-area: 4 / 1 / 7 / 3;
 }
@@ -149,4 +157,169 @@
 
 .see-all-btn:hover::before {
   width: 100%;
+}
+
+@media (min-width: 1001px) and (max-width: 1400px) {
+  .title {
+    font-size: 16rem;
+  }
+
+  .parent {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    column-gap: 80px;
+    row-gap: 100px;
+    margin-top: -120px;
+  }
+
+  .div1 {
+    grid-area: 2 / 1 / 3 / 2;
+  }
+
+  .div2 {
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .div3 {
+    grid-area: 1 / 1 / 2 / 3;
+    padding-block: 20px;
+  }
+
+  .div4 {
+    grid-area: 3 / 1 / 4 / 3;
+  }
+
+  .project {
+    width: min(100%, 500px);
+    margin-inline: auto;
+  }
+
+  .image-container,
+  .project-image {
+    width: 100%;
+    height: 480px;
+  }
+
+  .project-image {
+    display: block;
+  }
+}
+
+@media (max-width: 900px) {
+  .title {
+    font-size: clamp(8rem, 18vw, 14rem);
+  }
+
+  .parent {
+    grid-column-gap: 60px;
+    grid-row-gap: 100px;
+  }
+
+  .image-container,
+  .project-image {
+    height: 420px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    margin-block: 80px 30px;
+  }
+
+  .title {
+    font-size: 8rem;
+    letter-spacing: -5px;
+  }
+
+  .parent {
+    display: flex;
+    flex-direction: column;
+    margin-top: -40px;
+  }
+
+  .div3 {
+    order: 1;
+  }
+
+  .div1 {
+    order: 2;
+  }
+
+  .div2 {
+    order: 3;
+  }
+
+  .div4 {
+    order: 4;
+    margin-bottom: 0;
+  }
+
+  .div1,
+  .div2 {
+    margin-bottom: -20px;
+  }
+
+  .div1 .image-container,
+  .div1 .project-image,
+  .div2 .image-container,
+  .div2 .project-image {
+    height: min(52vw, 320px);
+  }
+
+  .div1,
+  .div2,
+  .div3,
+  .div4 {
+    margin-bottom: 0;
+  }
+
+  .div3 {
+    padding-block: 0;
+  }
+
+  .image-container,
+  .project-image {
+    width: 100%;
+    height: min(65vw, 420px);
+    min-height: 0;
+  }
+
+  .project-image {
+    display: block;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .project-title {
+    margin-top: 10px;
+  }
+
+  .project-meta {
+    margin-top: 5px;
+  }
+
+  .project {
+    width: min(100%, 520px);
+    margin-inline: auto;
+  }
+
+  .overlay-text {
+    width: 75px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 5.5rem;
+    letter-spacing: -4px;
+  }
+
+  .project-title {
+    font-size: 1.05rem;
+  }
+
+  .project-meta {
+    font-size: 0.7rem;
+  }
 }

@@ -6,4 +6,7 @@ export default defineConfig({
   // GitHub Pages hosts this repository at /portfolio/.
   base: '/portfolio/',
   plugins: [react()],
+  server: {
+    host: true
+  }
 })

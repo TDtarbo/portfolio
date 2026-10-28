@@ -83,7 +83,11 @@ const HorizontalScrollCarousel = () => {
     const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
   
     return (
-        <section ref={targetRef} className={styles["card-container-section"]}>
+      <>
+        <section
+          ref={targetRef}
+          className={`${styles["card-container-section"]} ${styles["desktop-section"]}`}
+        >
         <div className={styles["card-container-outer"]}>
         <motion.h2
           className={styles["title"]}
@@ -107,13 +111,26 @@ const HorizontalScrollCarousel = () => {
         >
           The Palette of Possibilities
         </motion.p>
-          <motion.div style={{ x }} className={styles["card-container-inner"]}>
+          <motion.div
+            style={{ x }}
+            className={styles["card-container-inner"]}
+          >
             {cards.map((card) => {
               return <SkillCard card={card} key={card.id} />;
             })}
           </motion.div>
         </div>
-      </section>      
+        </section>
+        <section className={styles["mobile-section"]}>
+          <h2 className={styles["mobile-title"]}>Skills</h2>
+          <p className={styles["mobile-paragraph"]}>The Palette of Possibilities</p>
+          <div className={styles["mobile-card-grid"]}>
+            {cards.map((card) => (
+              <SkillCard card={card} key={card.id} />
+            ))}
+          </div>
+        </section>
+      </>
     );
   };
 

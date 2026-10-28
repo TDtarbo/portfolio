@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Home from "../../pages/Home";
-import Blog from "../../pages/Blog";
 import About from "../../pages/About";
 import MyWork from "../../pages/MyWork";
 import GetawayDriver from "../../pages/projects/GetawayDriver";
@@ -15,7 +14,6 @@ const AnimatedRoutes = () => {
         <Routes location={location} key={location.pathname}>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/mywork" element={<MyWork />} />
           <Route path="/mywork/Getaway-Driver" element={<GetawayDriver />} />
         </Routes>

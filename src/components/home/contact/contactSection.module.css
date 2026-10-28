@@ -1,0 +1,155 @@
+.section {
+  padding: 180px 0 0;
+  border-top: 1px solid var(--primary-text);
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-family: "SourceCodePro-Light", monospace;
+  margin-bottom: 45px;
+}
+
+.title {
+  font-family: "Biotif-Bold";
+  font-size: clamp(4rem, 10vw, 10rem);
+  line-height: 0.9;
+  letter-spacing: -6px;
+  max-width: 1100px;
+}
+
+.footerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-top: 120px;
+  padding-top: 25px;
+  border-top: 1px solid var(--primary-text);
+}
+
+.copy {
+  font-size: 1.2rem;
+  max-width: 340px;
+}
+
+.contactLink {
+  color: var(--primary-text);
+  font-family: "Biotif-Bold";
+  font-size: 1.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.contactLink span {
+  color: var(--primary);
+  display: inline-block;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.contactLink:hover {
+  color: var(--primary);
+}
+
+.contactLink:hover span {
+  transform: translate(5px, -5px);
+}
+
+.siteFooter {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 50px;
+  position: relative;
+  margin-top: 150px;
+  margin-right: -150px;
+  margin-left: -150px;
+  padding: 40px 150px 55px;
+  min-height: 180px;
+  border-top: 1px solid #555;
+  background-color: var(--primary-text);
+  color: #d7d7d7;
+  font-family: "SourceCodePro-Light", monospace;
+  font-size: 0.85rem;
+}
+
+.footerLogo {
+  color: white;
+  font-family: "Biotif-Bold";
+  font-size: 1.2rem;
+}
+
+.footerBrand p {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+
+.footerNav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.footerNav a {
+  color: #d7d7d7;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+}
+
+.footerNav a:hover {
+  color: var(--primary);
+}
+
+.footerLabel {
+  color: var(--primary);
+  font-family: "Biotif-Bold";
+  margin-bottom: 8px;
+}
+
+.footerBottom {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.footerBrand p {
+  color: #999;
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding: 110px 0 0;
+  }
+
+  .title {
+    letter-spacing: -3px;
+  }
+
+  .footerRow {
+    display: block;
+    margin-top: 70px;
+  }
+
+  .contactLink {
+    display: inline-block;
+    margin-top: 40px;
+  }
+
+  .siteFooter {
+    display: block;
+    margin-top: 80px;
+    margin-right: -25px;
+    margin-left: -25px;
+    padding: 40px 25px 55px;
+    min-height: 0;
+  }
+
+  .footerNav {
+    margin-top: 35px;
+  }
+
+  .footerBottom {
+    position: static;
+    margin-top: 50px;
+  }
+}

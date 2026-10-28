@@ -1,36 +1,115 @@
 .navigation-container {
-   display: flex; 
-   margin-top: 100px;
-   gap: 10%;
-   width: 80%;
-   align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(30px, 8vw, 120px);
+  width: min(1100px, calc(100% - 80px));
+  min-height: 100%;
+  padding: 60px 0;
+  box-sizing: border-box;
 }
 
 .links-container {
-    display: flex;
-    align-items: center;
-    width: 50%;
+  flex: 1 1 420px;
+  min-width: 0;
+}
+
+.links-container ul {
+  margin: 0;
+  padding: 0;
 }
 
 .links-container li {
-    list-style-type: none;
-    margin: 30px;
+  list-style: none;
+  margin: 22px 0;
 }
 
 .links-container a {
-    text-decoration: none;
-    font-size: 4rem;
-    transition: .3s ease-in-out;
+  display: inline-block;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  color: white;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+  text-decoration: none;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .links-container a:hover {
-    margin-left: 40px;
+  color: var(--primary);
+  transform: translateX(20px);
 }
 
-
 .canvas-container {
-    background-color: rgba(255, 255, 255, 0);
-    height: 600px;
-    width: 600px;
+  flex: 0 1 500px;
+  width: min(500px, 45vw);
+  height: min(500px, 45vw);
+}
+
+@media (max-width: 1000px) {
+  .navigation-container {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    min-height: 0;
+    padding: 100px 32px 40px;
   }
-  
+
+  .canvas-container {
+    position: absolute;
+    right: 24px;
+    bottom: 24px;
+    display: block;
+    z-index: 0;
+    flex: 0 0 190px;
+    width: 190px;
+    height: 190px;
+    margin-bottom: 25px;
+    pointer-events: none;
+  }
+
+  .canvas-container canvas {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .links-container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .links-container li {
+    margin: 18px 0;
+  }
+
+  .links-container a {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    line-height: 1.05;
+  }
+}
+
+@media (max-width: 420px) {
+  .navigation-container {
+    padding-inline: 24px;
+  }
+
+  .links-container li {
+    margin: 14px 0;
+  }
+
+  .links-container a {
+    font-size: 2rem;
+  }
+
+  .canvas-container {
+    flex-basis: 150px;
+    width: 150px;
+    height: 150px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
