@@ -1,88 +1,70 @@
 import styles from "./workSection.module.css";
-
-import proj01 from "../../assets/proj01.png";
-import proj02 from "../../assets/proj02.png";
-import proj03 from "../../assets/proj03.png";
-import proj04 from "../../assets/proj04.png";
+import proj01 from "../../assets/projects/thumbnails/proj01.png";
+import proj02 from "../../assets/projects/thumbnails/proj02.png";
+import proj03 from "../../assets/projects/thumbnails/proj03.png";
+import proj04 from "../../assets/projects/thumbnails/proj04.png";
+import proj05 from "../../assets/projects/thumbnails/proj05.png";
+import alertThumb from "../../assets/projects/react_alert/ra001.png";
 import { Link } from "react-router-dom";
 
-const WorkSection = () => {
+const projects = [
+  {
+    image: proj04,
+    title: "Getaway Driver: Car Chase",
+    link: "/mywork/Getaway-Driver",
+  },
+  {
+    image: proj05,
+    title: "Ayurra Herbal - E-Commerce Storefront",
+    link: "/mywork/Ayurra-Herbal",
+  },
+  {
+    image: alertThumb,
+    title: "React Alert - NPM Package",
+    link: "/mywork/React-Alert",
+  },
+  { image: proj01, title: "LearnUP - The Study Planner App" },
+  { image: proj02, title: "VidCatch - Youtube video downloader" },
+  { image: proj03, title: "Node File Organizer" },
+];
 
-
-  return (
-
-
-    <div className={styles["container"]}>
-
-
-    <div className={styles["header"]}>My Work</div>
-    <div className={styles["header-paragraph"]}>
-      Discover my latest projects, where creativity meets innovation. 
-      Each piece reflects a unique blend of design and technical skill, 
-      crafted to push boundaries and deliver meaningful results.</div>
-    
-
-      <div className={styles["parent"]}>
-
-
-
-        <div className={styles["div1"]}>
-          <div className={styles["project"]}>
-            <div className={styles["image-container"]}>
-              <img src={proj04} className={styles["project-image"]} />
-              <Link to="/mywork/Getaway-Driver" className={styles["overlay-text"]}>View</Link>
-            </div>
-            <p className={styles["project-title"]}>
-              Getaway Driver - Police Chase Game
-            </p>
-          </div>
-        </div>
-
-        <div className={styles["div2"]}>
-        <div className={styles["project"]}>
-            <div className={styles["image-container"]}>
-              <img src={proj01} className={styles["project-image"]} />
-              <div className={styles["overlay-text"]}>View</div>
-            </div>
-            <p className={styles["project-title"]}>
-              LearnUP - The Study Planner App
-            </p>
-          </div>
-        </div>
-
-        <div className={styles["div3"]}>
-        <div className={styles["project"]}>
-            <div className={styles["image-container"]}>
-              <img src={proj02} className={styles["project-image"]} />
-              <div className={styles["overlay-text"]}>View</div>
-            </div>
-            <p className={styles["project-title"]}>
-              VidCatch - Youtube video downloader
-            </p>
-          </div> 
-        </div>
-
-
-        <div className={styles["div4"]}><div className={styles["project"]}>
-            <div className={styles["image-container"]}>
-              <img src={proj03} className={styles["project-image"]} />
-              <div className={styles["overlay-text"]}>View</div>
-            </div>
-            <p className={styles["project-title"]}>
-              Node File Organizer
-            </p>
-          </div> 
-        </div>
-      </div>
-
-
-      <div className={styles["section-footer"]}>
-        <div className={styles["line"]}></div>
-      </div>
-
-
+const WorkSection = () => (
+  <div className={styles.container}>
+    <div className={styles.header}>My Work</div>
+    <div className={styles.headerParagraph}>
+      Discover my latest projects, where creativity meets innovation. Each piece
+      reflects a unique blend of design and technical skill, crafted to push
+      boundaries and deliver meaningful results.
     </div>
-  );
-};
+
+    <div className={styles.parent}>
+      {projects.map((project) => (
+        <article className={styles.projectCard} key={project.title}>
+          <div className={styles.project}>
+            <div className={styles.imageContainer}>
+              <img
+                src={project.image}
+                className={styles.projectImage}
+                alt={project.title}
+              />
+              {project.link ? (
+                <Link to={project.link} className={styles.overlayText}>
+                  View
+                </Link>
+              ) : (
+                <span className={styles.overlayText}>Available soon</span>
+              )}
+            </div>
+            <p className={styles.projectTitle}>{project.title}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div className={styles.sectionFooter}>
+      <div className={styles.line}></div>
+    </div>
+  </div>
+);
 
 export default WorkSection;

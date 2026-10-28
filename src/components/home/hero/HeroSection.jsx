@@ -15,13 +15,7 @@ const ResponsiveOrbitControls = () => {
     return null;
   }
 
-  return (
-    <OrbitControls
-      enableZoom={false}
-      enablePan
-      enableRotate
-    />
-  );
+  return <OrbitControls enableZoom={false} enablePan enableRotate />;
 };
 
 const HeroAnimation = () => {
@@ -71,57 +65,56 @@ const HeroAnimation = () => {
 
   return (
     <>
-    <div className={styles["hero-section"]}>
-      <div className={styles["hero-content"]}>
+      <div className={styles["hero-section"]}>
+        <div className={styles["hero-content"]}>
+          <motion.div
+            variants={mainAnimation}
+            initial="hidden"
+            animate="visible"
+            className={styles["hero-title-para-one"]}
+          >
+            Crafting
+          </motion.div>
 
-      <motion.div
-        variants={mainAnimation}
-        initial="hidden"
-        animate="visible"
-        className={styles["hero-title-para-one"]}
-        >
-        Crafting
-      </motion.div>
-
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="visible"
-        className={styles["hero-title-para-two-container"]}
-        >
-        {letters.map((letter, index) => {
-          return (
-            <motion.span
-            key={index}
-            variants={child}
-            className={styles["hero-title-para-two"]}
-            style={
-                index === 0 || index === 8 || index === 15
-                  ? {
-                      color: "var(--primary)",
-                        textShadow: "4px 4px 8px rgba(0, 0, 0, 0.8)",
-                      }
-                    : {}
-                }
+          <motion.div
+            variants={container}
+            initial="hidden"
+            animate="visible"
+            className={styles["hero-title-para-two-container"]}
+          >
+            {letters.map((letter, index) => {
+              return (
+                <motion.span
+                  key={index}
+                  variants={child}
+                  className={styles["hero-title-para-two"]}
+                  style={
+                    index === 0 || index === 8 || index === 15
+                      ? {
+                          color: "var(--primary)",
+                          textShadow: "4px 4px 8px rgba(0, 0, 0, 0.8)",
+                        }
+                      : {}
+                  }
                 >
-              {letter === " " ? "\u00A0" : letter}
-            </motion.span>
-          );
-        })}
-      </motion.div>
-      <p className={styles["hero-role"]}>
-        Software engineering undergraduate · Full-stack developer
-      </p>
-      </div>
-      <div className={styles["hero-canvas-container"]}>
-        <Canvas camera={{ position: [0, 0, -10] }}>
-          <ResponsiveOrbitControls />
-          <directionalLight />
-          <pointLight position={[-30, 0, -30]} power={10.0} />
-          <SphereShape />
-        </Canvas>
-      </div>
+                  {letter === " " ? "\u00A0" : letter}
+                </motion.span>
+              );
+            })}
+          </motion.div>
+          <p className={styles["hero-role"]}>
+            Software engineering undergraduate · Full-stack developer
+          </p>
         </div>
+        <div className={styles["hero-canvas-container"]}>
+          <Canvas camera={{ position: [0, 0, -10] }}>
+            <ResponsiveOrbitControls />
+            <directionalLight />
+            <pointLight position={[-30, 0, -30]} power={10.0} />
+            <SphereShape />
+          </Canvas>
+        </div>
+      </div>
     </>
   );
 };

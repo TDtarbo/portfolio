@@ -1,8 +1,13 @@
-import { motion } from 'framer-motion';
-import PropTypes from 'prop-types';
+import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
-const AnimatedText = ({ text, className, duration = 0.5, delayIncrement = 0.05 }) => {
-  const words = text.split(' ');
+const AnimatedText = ({
+  text,
+  className,
+  duration = 0.5,
+  delayIncrement = 0.05,
+}) => {
+  const words = text.split(" ");
 
   return (
     <div className={className}>
@@ -15,9 +20,8 @@ const AnimatedText = ({ text, className, duration = 0.5, delayIncrement = 0.05 }
           viewport={{
             once: true,
           }}
-          
         >
-          {word}{' '}
+          {word}{" "}
         </motion.span>
       ))}
     </div>
@@ -29,7 +33,7 @@ AnimatedText.propTypes = {
   text: PropTypes.string.isRequired, // Text prop is required
   className: PropTypes.string, // Custom CSS class
   duration: PropTypes.number, // Animation duration
-  delayIncrement: PropTypes.number // Delay increment for each word
+  delayIncrement: PropTypes.number, // Delay increment for each word
 };
 
-export  { AnimatedText };
+export { AnimatedText };

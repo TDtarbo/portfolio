@@ -15,17 +15,17 @@
 }
 
 .parent {
-  margin-block: -200px 50px;
+  margin-block: -120px 50px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-column-gap: 200px;
-  grid-row-gap: 200px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: auto;
+  column-gap: 90px;
+  row-gap: 120px;
   margin-inline: auto;
 }
 
 .div1 {
-  grid-area: 1 / 1 / 4 / 3;
+  grid-area: 2 / 1 / 3 / 2;
 }
 
 .project:hover .project-image {
@@ -38,21 +38,25 @@
 
 .project {
   position: relative;
-  width: fit-content;
+  width: 100%;
   height: fit-content;
 }
 
 .project:hover .image-container {
-  border-radius: 600px;
+  border-radius: 24px;
 }
 .image-container {
+  position: relative;
   overflow: hidden;
+  border-radius: 12px;
   transition: 1s ease;
-  max-width: 100%;
+  width: 100%;
   height: 600px;
 }
 
 .project-image {
+  display: block;
+  width: 100%;
   height: 600px;
   object-fit: cover;
   margin-bottom: 20px;
@@ -75,6 +79,7 @@
   background-color: rgba(53, 53, 53, 0.882);
   width: 100px;
   height: 100px;
+  white-space: nowrap;
   border-radius: 100%;
   transition: 0.5s ease-in-out;
 }
@@ -92,11 +97,12 @@
 }
 
 .div2 {
-  grid-area: 4 / 1 / 7 / 3;
+  grid-area: 2 / 2 / 3 / 3;
+  margin-top: 80px;
 }
 
 .div3 {
-  grid-area: 1 / 3 / 3 / 5;
+  grid-area: 1 / 1 / 2 / 3;
   padding-block: 50px;
 }
 
@@ -111,7 +117,16 @@
 }
 
 .div4 {
-  grid-area: 3 / 3 / 7 / 5;
+  grid-area: 3 / 1 / 4 / 2;
+}
+
+.div5 {
+  grid-area: 3 / 2 / 4 / 3;
+  margin-top: 80px;
+}
+
+.div6 {
+  grid-area: 4 / 1 / 5 / 2;
 }
 
 .section-footer {
@@ -178,6 +193,7 @@
 
   .div2 {
     grid-area: 2 / 2 / 3 / 3;
+    margin-top: 70px;
   }
 
   .div3 {
@@ -187,6 +203,17 @@
 
   .div4 {
     grid-area: 3 / 1 / 4 / 3;
+    margin-top: 0;
+  }
+
+  .div5 {
+    grid-area: 4 / 1 / 5 / 3;
+    margin-top: 0;
+  }
+
+  .div6 {
+    grid-area: 5 / 1 / 6 / 3;
+    margin-top: 0;
   }
 
   .project {
@@ -254,6 +281,16 @@
     margin-bottom: 0;
   }
 
+  .div5 {
+    order: 5;
+    margin-bottom: 0;
+  }
+
+  .div6 {
+    order: 6;
+    margin-bottom: 0;
+  }
+
   .div1,
   .div2 {
     margin-bottom: -20px;
@@ -262,14 +299,22 @@
   .div1 .image-container,
   .div1 .project-image,
   .div2 .image-container,
-  .div2 .project-image {
+  .div2 .project-image,
+  .div4 .image-container,
+  .div4 .project-image,
+  .div5 .image-container,
+  .div5 .project-image,
+  .div6 .image-container,
+  .div6 .project-image {
     height: min(52vw, 320px);
   }
 
   .div1,
   .div2,
   .div3,
-  .div4 {
+  .div4,
+  .div5,
+  .div6 {
     margin-bottom: 0;
   }
 

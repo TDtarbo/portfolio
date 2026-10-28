@@ -1,6 +1,7 @@
 import { useState, useEffect, useContext } from "react";
+import { useLocation } from "react-router-dom";
 import styles from "../../styles/modules/Header.module.css";
-import logo from "../../assets/logo-small.svg";
+import logo from "../../assets/brand/logo-small.svg";
 import Navigation from "./Navigation";
 import { CursorContext } from "../../contexts/CursorContext";
 import { MenuBtnContext } from "../../contexts/MenuBtnContext";
@@ -10,6 +11,10 @@ const Header = () => {
 
   const { cursorVariant, setCursorVariant } = useContext(CursorContext);
   const { isOpen, setIsOpen } = useContext(MenuBtnContext);
+  const location = useLocation();
+  const isAyurraPage = location.pathname === "/mywork/Ayurra-Herbal";
+  const isGetawayPage = location.pathname === "/mywork/Getaway-Driver";
+  const isReactAlertPage = location.pathname === "/mywork/React-Alert";
   const [scrollDirection, setScrollDirection] = useState("top");
 
   useEffect(() => {
@@ -35,7 +40,6 @@ const Header = () => {
       window.removeEventListener("scroll", scrollActivatedNavigation);
     };
   }, []);
-
 
   const mouseEnter = () => {
     cursorVariant == "default"
@@ -79,10 +83,14 @@ const Header = () => {
       <header
         className={`
           ${styles["header-wrapper"]} 
+          ${isAyurraPage ? styles["header-wrapper-ayurra"] : ""}
+          ${isGetawayPage ? styles["header-wrapper-getaway"] : ""}
+          ${isReactAlertPage ? styles["header-wrapper-react-alert"] : ""}
           ${isOpen ? styles.open : ""}
           ${
             scrollDirection === "down"
-              ? styles["header-wrapper-scroll-down"] : ""
+              ? styles["header-wrapper-scroll-down"]
+              : ""
           }
           `}
       >
@@ -92,9 +100,10 @@ const Header = () => {
             ${isOpen ? styles.open : ""}
             ${
               scrollDirection === "up"
-                ? styles["header-container-scroll"] :
-                scrollDirection === "down"
-               ? styles["header-container-scroll"] : ""
+                ? styles["header-container-scroll"]
+                : scrollDirection === "down"
+                  ? styles["header-container-scroll"]
+                  : ""
             }
             `}
         >
@@ -104,11 +113,7 @@ const Header = () => {
               className={`
                 ${styles.logo} 
                 ${isOpen ? styles["logo-open"] : ""}
-                ${
-                  scrollDirection === "top"
-                    ? styles["logo-animation"]
-                    : ""
-                }
+                ${scrollDirection === "top" ? styles["logo-animation"] : ""}
                 `}
             />
 
@@ -118,8 +123,11 @@ const Header = () => {
               ${styles["header-title"]} 
               ${isOpen ? styles["header-title-open"] : ""}
               ${
-                scrollDirection === "up" ? styles["header-title-scroll-up"] :
-                scrollDirection === "down"? styles["header-title-scroll-up"] : ""
+                scrollDirection === "up"
+                  ? styles["header-title-scroll-up"]
+                  : scrollDirection === "down"
+                    ? styles["header-title-scroll-up"]
+                    : ""
               }
               `}
             >

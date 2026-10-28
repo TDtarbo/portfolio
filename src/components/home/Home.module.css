@@ -35,105 +35,103 @@
 }
 
 .hero-title-para-one {
-    font-family: Biotif-Bold;
-    font-size: 20rem;
-    letter-spacing: -20px;
-    margin-top: -1rem;
-    margin-left: -4rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+  font-family: Biotif-Bold;
+  font-size: 20rem;
+  letter-spacing: -20px;
+  margin-top: -1rem;
+  margin-left: -4rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-title-para-two-container {
-    margin-left: -2.5rem;
-    display: flex;
+  margin-left: -2.5rem;
+  display: flex;
 }
 
 .hero-title-para-two {
-    font-family: Biotif-Bold;
-    font-size: 9rem;
-    margin-top: -8rem;
-    letter-spacing: -10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5)
+  font-family: Biotif-Bold;
+  font-size: 9rem;
+  margin-top: -8rem;
+  letter-spacing: -10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-title-para-three-container {
-    display: flex;
-    overflow: hidden;
-    width: 100%;
-    margin-top: -3rem;
-    margin-left: -2.5rem;
-  }
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  margin-top: -3rem;
+  margin-left: -2.5rem;
+}
 
-  .hero-title-para-three{
-    font-family: Biotif-Bold;
-    font-size: 7rem;
-    letter-spacing: -5px;
-  }
-  
-  
-  .hero-title-para-three-typing {
-    margin-left: 30px;
-    border-right: 3px solid var(--primary-text);
-    padding-right: 5px;
-    width: fit-content;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 1s steps(11), cursor 0.4s step-end infinite alternate;
-    color: rgb(255, 106, 0);
-    font-size: 8rem;
-    font-family: 'Source Code Pro', monospace;
-    font-weight: bolder;
-    letter-spacing: -10px;
-    animation-delay: .45s;
-  }
+.hero-title-para-three {
+  font-family: Biotif-Bold;
+  font-size: 7rem;
+  letter-spacing: -5px;
+}
+
+.hero-title-para-three-typing {
+  margin-left: 30px;
+  border-right: 3px solid var(--primary-text);
+  padding-right: 5px;
+  width: fit-content;
+  white-space: nowrap;
+  overflow: hidden;
+  animation:
+    typing 1s steps(11),
+    cursor 0.4s step-end infinite alternate;
+  color: rgb(255, 106, 0);
+  font-size: 8rem;
+  font-family: "Source Code Pro", monospace;
+  font-weight: bolder;
+  letter-spacing: -10px;
+  animation-delay: 0.45s;
+}
 
 .logo {
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    left: 35%;
-    top: 600px;
-    filter: opacity(.1);
-    scale: 1;
-    z-index: -1;
-    transform: rotate(0deg) translateX(800px) scaleY(1.5);
-    animation: background 2s ease-in-out ;
-    
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 35%;
+  top: 600px;
+  filter: opacity(0.1);
+  scale: 1;
+  z-index: -1;
+  transform: rotate(0deg) translateX(800px) scaleY(1.5);
+  animation: background 2s ease-in-out;
 }
-
 
 .shrink {
-  transition-delay: .1s;
-  transform: translate3d(-35% , 0, 0);
+  transition-delay: 0.1s;
+  transform: translate3d(-35%, 0, 0);
 }
 
-
 @keyframes background {
-    0% {
-        transform: rotate(100deg);
-    }
-    50% {
-      transform: rotate(0deg) translateX(500px) translateY(50px) scaleY(1);
-    }
-    100% {
-      transform: rotate(0deg) translateX(800px) scaleY(1.5);
-    }
+  0% {
+    transform: rotate(100deg);
+  }
+  50% {
+    transform: rotate(0deg) translateX(500px) translateY(50px) scaleY(1);
+  }
+  100% {
+    transform: rotate(0deg) translateX(800px) scaleY(1.5);
+  }
 }
 
 @keyframes cursor {
-    50% {
-      border-color: transparent;
-    }
+  50% {
+    border-color: transparent;
   }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    to {
-        width: 50%;
-    }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
+  to {
+    width: 50%;
+  }
+}
 
 @media (min-width: 1001px) and (max-width: 1300px) {
   .hero-section {
@@ -319,4 +317,3 @@
     height: 280px;
   }
 }
-  

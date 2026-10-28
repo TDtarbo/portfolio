@@ -1,28 +1,28 @@
 .outer-container {
-    background-color: #222222;
-    margin-inline: -150px;
+  background-color: #222222;
+  margin-inline: -150px;
 }
 
 .inner-container {
-    padding: 0 150px 100px 150px;;
+  padding: 0 150px 100px 150px;
 }
 
 @media (max-width: 1000px) {
-    .outer-container {
-        margin-inline: -25px;
-    }
+  .outer-container {
+    margin-inline: -25px;
+  }
 
-    .inner-container {
-        padding: 0 25px 70px;
-    }
+  .inner-container {
+    padding: 0 25px 70px;
+  }
 }
 
 @media (min-width: 801px) and (max-width: 1000px) {
-    .outer-container {
-        margin-inline: -150px;
-    }
+  .outer-container {
+    margin-inline: -150px;
+  }
 
-    .inner-container {
-        padding-inline: 150px;
-    }
+  .inner-container {
+    padding-inline: 150px;
+  }
 }

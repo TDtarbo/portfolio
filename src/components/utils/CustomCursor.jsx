@@ -1,16 +1,14 @@
 import { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import {CursorContext} from "../../contexts/CursorContext";
+import { CursorContext } from "../../contexts/CursorContext";
 
 const CustomCursor = () => {
-
-    const {cursorVariant} = useContext(CursorContext)
+  const { cursorVariant } = useContext(CursorContext);
 
   const [mousePosition, setMousePosition] = useState({
     x: 0,
     y: 0,
   });
-
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -63,11 +61,15 @@ const CustomCursor = () => {
       top: -10,
       left: -10,
       mixBlendMode: "lighten",
-    }
+    },
   };
 
   return (
-    <motion.div className="cursor" variants={variants} animate={cursorVariant} />
+    <motion.div
+      className="cursor"
+      variants={variants}
+      animate={cursorVariant}
+    />
   );
 };
 

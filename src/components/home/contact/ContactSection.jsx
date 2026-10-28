@@ -43,7 +43,11 @@ const ContactSection = () => {
       <footer className={styles.siteFooter}>
         <div className={styles.footerBrand}>
           <span className={styles.footerLogo}>&lt; DevThilina /&gt;</span>
-          <p>Software engineering undergraduate<br />building for the web.</p>
+          <p>
+            Software engineering undergraduate
+            <br />
+            building for the web.
+          </p>
         </div>
         <nav className={styles.footerNav} aria-label="Footer navigation">
           <span className={styles.footerLabel}>Explore</span>
@@ -53,8 +57,12 @@ const ContactSection = () => {
         </nav>
         <div className={styles.footerNav}>
           <span className={styles.footerLabel}>Connect</span>
-          <a href="https://github.com/tdtarbo" target="_blank" rel="noreferrer">GitHub ↗</a>
-          <a href="#top" onClick={handleTopClick}>Back to top ↑</a>
+          <a href="https://github.com/tdtarbo" target="_blank" rel="noreferrer">
+            GitHub ↗
+          </a>
+          <a href="#top" onClick={handleTopClick}>
+            Back to top ↑
+          </a>
         </div>
         <div className={styles.footerBottom}>
           © {new Date().getFullYear()} Thilina

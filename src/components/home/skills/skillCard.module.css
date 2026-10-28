@@ -1,113 +1,112 @@
-
 .card {
-    height: 500px;
-    width: 400px;
-    overflow: hidden;
-    background-size: cover;
-    background: linear-gradient(45deg, #0d0d0d, #131313, #171717);
-    transition: .2s ease-in-out;
+  height: 500px;
+  width: 400px;
+  overflow: hidden;
+  background-size: cover;
+  background: linear-gradient(45deg, #0d0d0d, #131313, #171717);
+  transition: 0.2s ease-in-out;
 }
 
-.card:hover{
-    background-size: contain;
-    transform: scale(1.05);
-    background: linear-gradient(235deg, #0d0d0d, #131313, #180b0b);
+.card:hover {
+  background-size: contain;
+  transform: scale(1.05);
+  background: linear-gradient(235deg, #0d0d0d, #131313, #180b0b);
 }
 
 .card-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 50px ;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 50px;
 }
 
 .card-title {
-    color: white;
-    font-weight: 100;
-    font-size: 30px;
-    padding: 0 50px 0 50px;
+  color: white;
+  font-weight: 100;
+  font-size: 30px;
+  padding: 0 50px 0 50px;
 }
 
 .card-description {
-    color: white;
-    padding: 20px 50px 0 50px;
+  color: white;
+  padding: 20px 50px 0 50px;
 }
 
 @media (max-width: 1000px) {
-    .card {
-        height: 380px;
-        width: 280px;
-    }
+  .card {
+    height: 380px;
+    width: 280px;
+  }
 
-    .card-image {
-        width: 140px;
-        height: 140px;
-        margin: 35px;
-    }
+  .card-image {
+    width: 140px;
+    height: 140px;
+    margin: 35px;
+  }
 
-    .card-title {
-        font-size: 24px;
-        padding-inline: 35px;
-    }
+  .card-title {
+    font-size: 24px;
+    padding-inline: 35px;
+  }
 
-    .card-description {
-        padding: 15px 35px 0;
-    }
+  .card-description {
+    padding: 15px 35px 0;
+  }
 }
 
 @media (max-width: 1000px) {
-    .card {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        width: 100%;
-        height: 78px;
-        padding: 8px;
-    }
+  .card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    height: 78px;
+    padding: 8px;
+  }
 
-    .card-image {
-        flex: 0 0 40px;
-        width: 40px;
-        height: 40px;
-        margin: 0;
-    }
+  .card-image {
+    flex: 0 0 40px;
+    width: 40px;
+    height: 40px;
+    margin: 0;
+  }
 
-    .card-title {
-        font-size: 14px;
-        line-height: 1.05;
-        padding: 0;
-    }
+  .card-title {
+    font-size: 14px;
+    line-height: 1.05;
+    padding: 0;
+  }
 
-    .card-description {
-        display: none;
-    }
+  .card-description {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
-    .card {
-        height: 70px;
-        width: 100%;
-        min-width: 0;
-        gap: 6px;
-        padding: 6px;
-    }
+  .card {
+    height: 70px;
+    width: 100%;
+    min-width: 0;
+    gap: 6px;
+    padding: 6px;
+  }
 
-    .card-image {
-        flex-basis: 32px;
-        width: 32px;
-        height: 32px;
-        margin: 0;
-    }
+  .card-image {
+    flex-basis: 32px;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+  }
 
-    .card-title {
-        min-width: 0;
-        font-size: 12px;
-        padding: 0;
-        overflow-wrap: anywhere;
-    }
+  .card-title {
+    min-width: 0;
+    font-size: 12px;
+    padding: 0;
+    overflow-wrap: anywhere;
+  }
 
-    .card-description {
-        padding: 12px 30px 0;
-        font-size: 0.9rem;
-    }
+  .card-description {
+    padding: 12px 30px 0;
+    font-size: 0.9rem;
+  }
 }

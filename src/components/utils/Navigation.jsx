@@ -61,23 +61,27 @@ const Navigation = ({ mouseClick, mouseLeave, isOpen }) => {
         </Canvas>
       </motion.div>
       <div className={styles["links-container"]}>
-      <motion.ul variants={listVariants} initial="hidden" whileInView="visible">
-      <motion.li variants={variants}>
-        <Link onClick={handleClick} to="/">
-          Home
-        </Link>
-      </motion.li>
-      <motion.li variants={variants}>
-        <Link onClick={handleClick} to="/about">
-          About
-        </Link>
-      </motion.li>
-      <motion.li variants={variants}>
-        <Link onClick={handleClick} to="/mywork">
-          My Work
-        </Link>
-      </motion.li>
-    </motion.ul>
+        <motion.ul
+          variants={listVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
+          <motion.li variants={variants}>
+            <Link onClick={handleClick} to="/">
+              Home
+            </Link>
+          </motion.li>
+          <motion.li variants={variants}>
+            <Link onClick={handleClick} to="/about">
+              About
+            </Link>
+          </motion.li>
+          <motion.li variants={variants}>
+            <Link onClick={handleClick} to="/mywork">
+              My Work
+            </Link>
+          </motion.li>
+        </motion.ul>
       </div>
     </nav>
   );

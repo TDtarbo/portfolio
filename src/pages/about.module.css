@@ -1,58 +1,241 @@
-.page { transition: 0.3s ease-in-out; }
-.shrink { transition-delay: 0.1s; transform: translate3d(-35%, 0, 0); }
-.eyebrow { color: var(--primary); font-family: "Biotif-Bold"; font-size: 1.1rem; }
-.hero { padding-bottom: 150px; border-bottom: 1px solid var(--primary-text); }
-.hero h1 { margin-top: 55px; font-family: "Biotif-Bold"; font-size: clamp(5rem, 12vw, 12rem); line-height: .85; letter-spacing: -8px; }
-.intro { max-width: 480px; margin: 70px 0 0 auto; font-size: 1.35rem; line-height: 1.4; }
-.profileSection { display: grid; grid-template-columns: .8fr 1.2fr; gap: 100px; align-items: center; padding: 150px 0; border-bottom: 1px solid var(--primary-text); }
-.photoFrame { width: min(100%, 450px); aspect-ratio: 1; overflow: hidden; background: #d8d5d1; }
-.photoFrame img { display: block; width: 100%; height: 100%; object-fit: contain; filter: grayscale(100%); transition: filter .4s ease-in-out; }
-.photoFrame:hover img { filter: grayscale(0%); }
-.profileCopy { max-width: 650px; }
-.profileCopy h2 { max-width: 650px; margin: 35px 0 45px; font-family: "Biotif-Bold"; font-size: clamp(3rem, 5vw, 5.5rem); line-height: .9; letter-spacing: -4px; }
-.profileCopy > p:not(.eyebrow) { max-width: 520px; font-size: 1.2rem; line-height: 1.4; }
-.profileCopy > p + p { margin-top: 25px; color: var(--primary-text-light); }
-.strengthsSection { padding: 120px 0; border-bottom: 1px solid var(--primary-text); }
-.sectionHeader { display: flex; justify-content: space-between; gap: 30px; padding-bottom: 25px; border-bottom: 1px solid var(--primary-text); }
-.caption { font-family: "SourceCodePro-Light", monospace; font-size: .9rem; }
-.strengths { display: grid; grid-template-columns: repeat(3, 1fr); }
-.strength { min-height: 270px; padding: 30px 35px 30px 0; border-right: 1px solid var(--primary-text); }
-.strength + .strength { padding-left: 35px; }
-.strength:last-child { border-right: 0; }
-.strength > span { color: var(--primary); font-family: "SourceCodePro-Light", monospace; }
-.strength h2 { margin: 65px 0 20px; font-family: "Biotif-Bold"; font-size: 2.2rem; }
-.strength p { max-width: 300px; font-size: 1.1rem; line-height: 1.4; }
-.toolsSection { padding: 100px 0; border-bottom: 1px solid var(--primary-text); }
-.technologyList { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 45px; }
-.technologyList span { padding: 12px 18px; border: 1px solid var(--primary-text); font-size: 1rem; transition: color .3s ease-in-out, background .3s ease-in-out; }
-.technologyList span:hover { color: white; background: var(--primary-text); }
-.nextSection { padding: 150px 0 40px; }
-.nextLink { display: inline-block; margin-top: 45px; color: var(--primary-text); font-family: "Biotif-Bold"; font-size: clamp(2.5rem, 6vw, 6rem); line-height: .9; letter-spacing: -3px; text-decoration: none; }
-.nextLink span { color: var(--primary); display: inline-block; transition: transform .3s ease-in-out; }
-.nextLink:hover span { transform: translate(8px, -8px); }
+.page {
+  transition: 0.3s ease-in-out;
+}
+.shrink {
+  transition-delay: 0.1s;
+  transform: translate3d(-35%, 0, 0);
+}
+.eyebrow {
+  color: var(--primary);
+  font-family: "Biotif-Bold";
+  font-size: 1.1rem;
+}
+.hero {
+  padding-bottom: 150px;
+  border-bottom: 1px solid var(--primary-text);
+}
+.hero h1 {
+  margin-top: 55px;
+  font-family: "Biotif-Bold";
+  font-size: clamp(5rem, 12vw, 12rem);
+  line-height: 0.85;
+  letter-spacing: -8px;
+}
+.intro {
+  max-width: 480px;
+  margin: 70px 0 0 auto;
+  font-size: 1.35rem;
+  line-height: 1.4;
+}
+.profileSection {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 100px;
+  align-items: center;
+  padding: 150px 0;
+  border-bottom: 1px solid var(--primary-text);
+}
+.photoFrame {
+  width: min(100%, 450px);
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #d8d5d1;
+}
+.photoFrame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease-in-out;
+}
+.photoFrame:hover img {
+  filter: grayscale(0%);
+}
+.profileCopy {
+  max-width: 650px;
+}
+.profileCopy h2 {
+  max-width: 650px;
+  margin: 35px 0 45px;
+  font-family: "Biotif-Bold";
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  line-height: 0.9;
+  letter-spacing: -4px;
+}
+.profileCopy > p:not(.eyebrow) {
+  max-width: 520px;
+  font-size: 1.2rem;
+  line-height: 1.4;
+}
+.profileCopy > p + p {
+  margin-top: 25px;
+  color: var(--primary-text-light);
+}
+.strengthsSection {
+  padding: 120px 0;
+  border-bottom: 1px solid var(--primary-text);
+}
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid var(--primary-text);
+}
+.caption {
+  font-family: "SourceCodePro-Light", monospace;
+  font-size: 0.9rem;
+}
+.strengths {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.strength {
+  min-height: 270px;
+  padding: 30px 35px 30px 0;
+  border-right: 1px solid var(--primary-text);
+}
+.strength + .strength {
+  padding-left: 35px;
+}
+.strength:last-child {
+  border-right: 0;
+}
+.strength > span {
+  color: var(--primary);
+  font-family: "SourceCodePro-Light", monospace;
+}
+.strength h2 {
+  margin: 65px 0 20px;
+  font-family: "Biotif-Bold";
+  font-size: 2.2rem;
+}
+.strength p {
+  max-width: 300px;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+.toolsSection {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--primary-text);
+}
+.technologyList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 45px;
+}
+.technologyList span {
+  padding: 12px 18px;
+  border: 1px solid var(--primary-text);
+  font-size: 1rem;
+  transition:
+    color 0.3s ease-in-out,
+    background 0.3s ease-in-out;
+}
+.technologyList span:hover {
+  color: white;
+  background: var(--primary-text);
+}
+.nextSection {
+  padding: 150px 0 40px;
+}
+.nextLink {
+  display: inline-block;
+  margin-top: 45px;
+  color: var(--primary-text);
+  font-family: "Biotif-Bold";
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -3px;
+  text-decoration: none;
+}
+.nextLink span {
+  color: var(--primary);
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+.nextLink:hover span {
+  transform: translate(8px, -8px);
+}
 
 @media (max-width: 1000px) {
-  .hero h1 { font-size: clamp(4rem, 11vw, 8rem); letter-spacing: -5px; }
-  .profileSection { grid-template-columns: 1fr; gap: 70px; padding: 100px 0; }
-  .photoFrame { width: min(100%, 360px); margin-inline: auto; }
-  .profileCopy { max-width: 700px; margin-inline: auto; text-align: center; }
-  .profileCopy h2, .profileCopy > p:not(.eyebrow) { margin-inline: auto; }
-  .strengths { display: block; }
-  .strength, .strength + .strength { min-height: auto; padding: 30px 0; border-right: 0; border-bottom: 1px solid var(--primary-text); }
-  .strength:last-child { border-bottom: 0; }
-  .strength h2 { margin-top: 35px; }
+  .hero h1 {
+    font-size: clamp(4rem, 11vw, 8rem);
+    letter-spacing: -5px;
+  }
+  .profileSection {
+    grid-template-columns: 1fr;
+    gap: 70px;
+    padding: 100px 0;
+  }
+  .photoFrame {
+    width: min(100%, 360px);
+    margin-inline: auto;
+  }
+  .profileCopy {
+    max-width: 700px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  .profileCopy h2,
+  .profileCopy > p:not(.eyebrow) {
+    margin-inline: auto;
+  }
+  .strengths {
+    display: block;
+  }
+  .strength,
+  .strength + .strength {
+    min-height: auto;
+    padding: 30px 0;
+    border-right: 0;
+    border-bottom: 1px solid var(--primary-text);
+  }
+  .strength:last-child {
+    border-bottom: 0;
+  }
+  .strength h2 {
+    margin-top: 35px;
+  }
 }
 
 @media (max-width: 600px) {
-  .hero { padding-bottom: 90px; }
-  .hero h1 { margin-top: 40px; letter-spacing: -3px; }
-  .intro { margin-top: 50px; font-size: 1.1rem; }
-  .profileSection { padding: 80px 0; }
-  .profileCopy h2 { letter-spacing: -2px; }
-  .profileCopy > p:not(.eyebrow) { font-size: 1.05rem; }
-  .sectionHeader { display: block; }
-  .caption { margin-top: 20px; }
-  .technologyList { margin-top: 30px; }
-  .technologyList span { padding: 10px 13px; font-size: .9rem; }
-  .nextSection { padding-top: 100px; }
+  .hero {
+    padding-bottom: 90px;
+  }
+  .hero h1 {
+    margin-top: 40px;
+    letter-spacing: -3px;
+  }
+  .intro {
+    margin-top: 50px;
+    font-size: 1.1rem;
+  }
+  .profileSection {
+    padding: 80px 0;
+  }
+  .profileCopy h2 {
+    letter-spacing: -2px;
+  }
+  .profileCopy > p:not(.eyebrow) {
+    font-size: 1.05rem;
+  }
+  .sectionHeader {
+    display: block;
+  }
+  .caption {
+    margin-top: 20px;
+  }
+  .technologyList {
+    margin-top: 30px;
+  }
+  .technologyList span {
+    padding: 10px 13px;
+    font-size: 0.9rem;
+  }
+  .nextSection {
+    padding-top: 100px;
+  }
 }

@@ -9,6 +9,103 @@
   transition: transform 0.5s ease-in-out;
 }
 
+.header-wrapper-ayurra {
+  background: #f6f0e6;
+}
+
+.header-wrapper-ayurra .header-container {
+  border-color: #263c2b;
+}
+
+.header-wrapper-ayurra .header-title,
+.header-wrapper-ayurra .hamburger-toggle span {
+  color: #263c2b;
+  border-color: #263c2b;
+}
+
+.header-wrapper-ayurra .hamburger-toggle span {
+  background-color: #263c2b;
+}
+
+.header-wrapper-ayurra .logo {
+  filter: none;
+}
+
+.header-wrapper-ayurra.open .header-title {
+  color: white;
+  border-color: white;
+}
+
+.header-wrapper-ayurra.open .hamburger-toggle span {
+  background-color: white;
+}
+
+.header-wrapper-ayurra.open .logo {
+  filter: invert(1);
+}
+
+.header-wrapper-getaway {
+  background: #fff8d8;
+}
+
+.header-wrapper-getaway .header-container {
+  border-color: #292316;
+}
+
+.header-wrapper-getaway .header-title,
+.header-wrapper-getaway .hamburger-toggle span {
+  color: #292316;
+  border-color: #292316;
+}
+
+.header-wrapper-getaway .hamburger-toggle span {
+  background-color: #292316;
+}
+
+.header-wrapper-getaway.open .header-title {
+  color: white;
+  border-color: white;
+}
+
+.header-wrapper-getaway.open .hamburger-toggle span {
+  background-color: white;
+}
+
+.header-wrapper-getaway.open .logo {
+  filter: invert(1);
+}
+
+.header-wrapper-react-alert {
+  background: #f8f7fb;
+}
+
+.header-wrapper-react-alert .header-container {
+  border-color: #201d2b;
+}
+
+.header-wrapper-react-alert .header-title,
+.header-wrapper-react-alert .hamburger-toggle span {
+  color: #201d2b;
+  border-color: #201d2b;
+}
+
+.header-wrapper-react-alert .hamburger-toggle span {
+  background-color: #201d2b;
+}
+
+.header-wrapper-react-alert.open .header-title {
+  color: white;
+  border-color: white;
+}
+
+.header-wrapper-react-alert.open .hamburger-toggle span {
+  background-color: white;
+}
+
+.header-wrapper-react-alert.open .logo {
+  filter: invert(1);
+}
+
 .header-wrapper::after {
   content: "";
   position: absolute;
@@ -81,7 +178,9 @@
   font-family: "Biotif-ExtraBold";
   white-space: nowrap;
   text-overflow: ellipsis;
-  animation: typing 1s steps(16), cursor 0.4s step-end infinite alternate;
+  animation:
+    typing 1s steps(16),
+    cursor 0.4s step-end infinite alternate;
   transition: 0.3s ease-in-out;
 }
 
@@ -177,16 +276,24 @@
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes cursor {
-  50% { border-color: transparent; }
+  50% {
+    border-color: transparent;
+  }
 }
 
 @keyframes typing {
-  from { width: 0; }
+  from {
+    width: 0;
+  }
 }
 
 @media (max-width: 800px) {

@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
 import styles from "./IntroSection.module.css";
-import Profile_Photo from "../../../assets/prof_v2.png";
+import Profile_Photo from "../../../assets/profile/prof_v2.png";
 
 const services = [
-  ["Web development", "Responsive, accessible websites and applications built with clean, maintainable code."],
-  ["UI implementation", "Thoughtful interfaces that turn ideas and designs into clear, engaging digital experiences."],
-  ["Problem solving", "Practical technical solutions that make products easier to use, scale, and improve."],
+  [
+    "Web development",
+    "Responsive, accessible websites and applications built with clean, maintainable code.",
+  ],
+  [
+    "UI implementation",
+    "Thoughtful interfaces that turn ideas and designs into clear, engaging digital experiences.",
+  ],
+  [
+    "Problem solving",
+    "Practical technical solutions that make products easier to use, scale, and improve.",
+  ],
 ];
 
 const fadeUp = {
@@ -51,8 +60,12 @@ function IntroSection() {
         </div>
         <div className={styles.contactItem}>
           <span>LinkedIn</span>
-          
-          <a href="https://www.linkedin.com/in/thilina-dilhan/" target="_blank" rel="noreferrer">
+
+          <a
+            href="https://www.linkedin.com/in/thilina-dilhan/"
+            target="_blank"
+            rel="noreferrer"
+          >
             Thilina Dilhan ↗
           </a>
         </div>
@@ -72,7 +85,9 @@ function IntroSection() {
 
       <div className={styles.servicesHeader}>
         <p className={styles.eyebrow}>What I do</p>
-        <p className={styles.caption}>A few ways I can help bring an idea to life.</p>
+        <p className={styles.caption}>
+          A few ways I can help bring an idea to life.
+        </p>
       </div>
 
       <div className={styles.services}>
@@ -90,7 +105,9 @@ function IntroSection() {
               <h3>{title}</h3>
               <p>{description}</p>
             </div>
-            <span className={styles.arrow} aria-hidden="true">↗</span>
+            <span className={styles.arrow} aria-hidden="true">
+              ↗
+            </span>
           </motion.article>
         ))}
       </div>

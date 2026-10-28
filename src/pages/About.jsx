@@ -3,16 +3,33 @@ import { Link } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import Transition from "../components/utils/Transitions";
 import { MenuBtnContext } from "../contexts/MenuBtnContext";
-import profilePhoto from "../assets/prof_v2.png";
+import profilePhoto from "../assets/profile/prof_v2.png";
 import styles from "./about.module.css";
 
 const strengths = [
-  ["Curious", "I like understanding how things work and finding better ways to build them."],
-  ["Thoughtful", "I care about the small details that make an experience feel clear and natural."],
-  ["Always learning", "Every project is a chance to improve my skills and try something new."],
+  [
+    "Curious",
+    "I like understanding how things work and finding better ways to build them.",
+  ],
+  [
+    "Thoughtful",
+    "I care about the small details that make an experience feel clear and natural.",
+  ],
+  [
+    "Always learning",
+    "Every project is a chance to improve my skills and try something new.",
+  ],
 ];
 
-const technologies = ["JavaScript", "React", "Node.js", "PHP", "MySQL", "Android", "HTML & CSS"];
+const technologies = [
+  "JavaScript",
+  "React",
+  "Node.js",
+  "PHP",
+  "MySQL",
+  "Android",
+  "HTML & CSS",
+];
 
 const About = () => {
   const { isOpen } = useContext(MenuBtnContext);
@@ -25,7 +42,10 @@ const About = () => {
     <main className={`${styles.page} ${isOpen ? styles.shrink : ""}`}>
       <section className={styles.hero}>
         <p className={styles.eyebrow}>About me</p>
-        <h1>More than code.<br />I build with purpose.</h1>
+        <h1>
+          More than code.
+          <br />I build with purpose.
+        </h1>
         <p className={styles.intro}>
           I&apos;m Thilina, a software engineering undergraduate and full-stack
           developer who enjoys turning ideas into useful digital experiences.
@@ -54,7 +74,9 @@ const About = () => {
       <section className={styles.strengthsSection}>
         <div className={styles.sectionHeader}>
           <p className={styles.eyebrow}>What matters to me</p>
-          <p className={styles.caption}>The qualities I bring to every project.</p>
+          <p className={styles.caption}>
+            The qualities I bring to every project.
+          </p>
         </div>
         <div className={styles.strengths}>
           {strengths.map(([title, description], index) => (
@@ -77,7 +99,9 @@ const About = () => {
       <section className={styles.toolsSection}>
         <p className={styles.eyebrow}>Tools I use</p>
         <div className={styles.technologyList}>
-          {technologies.map((technology) => <span key={technology}>{technology}</span>)}
+          {technologies.map((technology) => (
+            <span key={technology}>{technology}</span>
+          ))}
         </div>
       </section>
 

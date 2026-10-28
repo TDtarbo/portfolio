@@ -5,26 +5,20 @@ import { MenuBtnContext } from "../contexts/MenuBtnContext";
 import WorkSection from "../components/mywork/WorkSection";
 
 const MyWork = () => {
-  
   const { isOpen } = useContext(MenuBtnContext);
-  
+
   console.log("Home page rendered");
 
   useEffect(() => {
-
     window.scrollTo(0, 0);
-
   }, []);
 
   return (
-    <main  className={isOpen? styles["shrink"] : ""}>
-
-      <WorkSection/>
-      
+    <main className={isOpen ? styles["shrink"] : ""}>
+      <WorkSection />
     </main>
   );
 };
-
 
 const MyWorkWithTransition = Transition(MyWork);
 
