@@ -5,6 +5,9 @@ import Transition from "../../components/utils/Transitions";
 import { MenuBtnContext } from "../../contexts/MenuBtnContext";
 import PackageImage from "../../assets/projects/react_alert/ra003.png";
 import AlertImage from "../../assets/projects/react_alert/ra002.png";
+import SuccessImage from "../../assets/projects/react_alert/ra004.png";
+import SuccessActionImage from "../../assets/projects/react_alert/ra005.png";
+import ErrorActionImage from "../../assets/projects/react_alert/ra006.png";
 import styles from "./reactAlert.module.css";
 
 const animations = ["scale", "slide", "drop"];
@@ -19,7 +22,11 @@ const apiRows = [
     "Choose the type, copy, animation, duration, and optional action.",
   ],
 ];
-const screenSlots = ["Success alert", "Error with action", "Animation states"];
+const screenSlots = [
+  [SuccessImage, "Success alert"],
+  [SuccessActionImage, "Success with action"],
+  [ErrorActionImage, "Error with action"],
+];
 
 const reveal = {
   hidden: { opacity: 0, y: 28 },
@@ -210,17 +217,16 @@ sendAlert({
         <div className={styles.sectionHeading}>
           <p className={styles.kicker}>Project screens</p>
           <p>
-            Replace these placeholders with package screenshots, README images,
-            or demo captures.
+            The alert states supported by the package.
           </p>
         </div>
         <div className={styles.screenGrid}>
-          {screenSlots.map((label, index) => (
+          {screenSlots.map(([image, label], index) => (
             <figure className={styles.screenSlot} key={label}>
+              <img src={image} alt={label} />
               <div>
                 <span>0{index + 1}</span>
                 <p>{label}</p>
-                <small>Add image here</small>
               </div>
             </figure>
           ))}

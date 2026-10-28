@@ -419,23 +419,37 @@
 }
 .screenGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 18px;
   margin-top: 65px;
 }
 .screenSlot {
-  min-height: 300px;
+  position: relative;
+  min-height: 150px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   margin: 0;
   padding: 22px;
   border: 1px dashed rgba(32, 29, 43, 0.45);
   background: linear-gradient(135deg, #e5e2f1, #faf9fc);
 }
+.screenSlot img {
+  display: block;
+  width: min(76%, 900px);
+  height: auto;
+  max-height: none;
+  margin: 0;
+  object-fit: contain;
+}
 .screenSlot > div {
   display: flex;
   flex-direction: column;
   gap: 8px;
+  width: 20%;
+  min-width: 145px;
+  padding-left: 24px;
 }
 .screenSlot span {
   color: var(--accent);
@@ -584,7 +598,17 @@
     margin-top: 45px;
   }
   .screenSlot {
-    min-height: 220px;
+    min-height: 150px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .screenSlot img {
+    width: 100%;
+  }
+  .screenSlot > div {
+    width: 100%;
+    min-width: 0;
+    padding: 18px 0 0;
   }
   .reflectionSection {
     padding: 110px 0;
